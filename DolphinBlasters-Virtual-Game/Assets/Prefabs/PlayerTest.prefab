@@ -634,15 +634,15 @@ MonoBehaviour:
   _throw_power: 2000
   _die_magnitude: 8
   _bounce_multiplier: 0.1
-  _max_ball_velocity: 8
+  _max_ball_velocity: 10
   _desired_movement_speed: 500
   _holder: {fileID: 4591612961260248}
   _dash_speed: 1000
   _start_dash_time: 0.1
   _max_ball_time: 3
   _desired_hit_timer: 0.75
-  _character_ability: 1
-  _ability_duration: 100
+  _character_ability: 2
+  _ability_duration: 0.75
   _player_number: 1
 --- !u!136 &136322933927710142
 CapsuleCollider:
