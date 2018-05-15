@@ -251,7 +251,19 @@ public abstract class CharacterBehaviour : MonoBehaviour {
     {
         if (ability == ABILITY.TELEPORT)
         {
-
+            CharacterBehaviour character = null;
+            for(int i = 0; i < 100; i++)
+            {
+                character = GameManager.active_characters[Random.Range(0, GameManager.active_characters.Length)];
+                if (character != null && character != this)
+                {
+                    break;
+                }
+            }
+            //swap places with the target
+            Vector3 target_pos = character.transform.position;
+            character.transform.position = transform.position;
+            transform.position = target_pos;
         }
         else if(ability == ABILITY.FREEZE)
         {
@@ -266,7 +278,7 @@ public abstract class CharacterBehaviour : MonoBehaviour {
                 Debug.Log(character);
                 if(character != this)
                 {
-                    //root him
+                    //root the other players
                     character.SetRootTimer(_ability_duration);
                     character.GetComponent<Rigidbody>().velocity = Vector3.zero;
                 }
