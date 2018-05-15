@@ -45,6 +45,7 @@ public class ObstacleSpawner : MonoBehaviour {
     {
         if (obstacle != null && _obstacles.Contains(obstacle))
         {
+			
             _obstacles.Remove(obstacle);
         }
     }
