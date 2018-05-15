@@ -235,8 +235,9 @@ public abstract class CharacterBehaviour : MonoBehaviour {
             else
             {
                 _rb.velocity = Vector3.zero;
+                _root_timer = 0f;
+                _is_frozen = false;
             }
-            _is_frozen = false;
         }
         if(collision.gameObject.tag == "Border")
         {
