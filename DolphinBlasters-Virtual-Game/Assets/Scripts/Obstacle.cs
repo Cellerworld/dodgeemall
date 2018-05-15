@@ -18,7 +18,7 @@ public class Obstacle : MonoBehaviour {
 
     private void Update()
     {
-        _canvas.transform.position = new Vector3(transform.position.x, 0f, transform.position.z);
+        _canvas.transform.position = new Vector3(transform.position.x, -1f, transform.position.z);
     }
 
     private void OnCollisionEnter(Collision collision)
