@@ -25,8 +25,11 @@ public class Obstacle : MonoBehaviour {
     {
         if(collision.gameObject.tag == "Ball")
         {
-            _spawner.RemoveObstacle(this);
-            Destroy(gameObject);
+			Rigidbody _rb = collision.gameObject.GetComponent<Rigidbody>();
+			_rb.velocity = -_rb.velocity;
+			StartCoroutine(DestroyObject());
+//            _spawner.RemoveObstacle(this);
+//            Destroy(gameObject);
             return;
         }
         if(collision.gameObject.tag == "Ground")
@@ -46,4 +49,11 @@ public class Obstacle : MonoBehaviour {
             return;
         }
     }
+
+	IEnumerator DestroyObject()
+	{
+		yield return new WaitForSeconds (1);
+		_spawner.RemoveObstacle(this);
+		Destroy(gameObject);
+	}
 }

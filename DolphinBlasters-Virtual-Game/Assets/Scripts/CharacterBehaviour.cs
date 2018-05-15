@@ -81,6 +81,7 @@ public abstract class CharacterBehaviour : MonoBehaviour {
     private void Start()
     {
         _dash_time = _start_dash_time;
+		_movement_speed = _desired_movement_speed;
     }
 
     public void SetRootTimer(float root_time)
