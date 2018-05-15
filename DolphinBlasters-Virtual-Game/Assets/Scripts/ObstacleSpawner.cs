@@ -16,11 +16,11 @@ public class ObstacleSpawner : MonoBehaviour {
     private GameObject _obstacle;
 
     private float _drop_cooldown;
-    private List<Obstacle> _obstacles;
+    private List<GameObject> _obstacles;
 
     private void Start()
     {
-        _obstacles = new List<Obstacle>();
+        _obstacles = new List<GameObject>();
         _drop_cooldown = _max_drop_cooldown;
     }
 
@@ -41,7 +41,7 @@ public class ObstacleSpawner : MonoBehaviour {
     }
 
     //removes the given obstacle
-    public void RemoveObstacle(Obstacle obstacle)
+    public void RemoveObstacle(GameObject obstacle)
     {
         if (obstacle != null && _obstacles.Contains(obstacle))
         {
@@ -54,7 +54,8 @@ public class ObstacleSpawner : MonoBehaviour {
     private void DropObstacle()
     {
         Vector3 drop_position = new Vector3(Random.Range(-_drop_radius, _drop_radius), transform.position.y, Random.Range(-_drop_radius, _drop_radius));
-        Instantiate(_obstacle, drop_position, Quaternion.identity);
+        GameObject obstacle = Instantiate(_obstacle, drop_position, Quaternion.identity);
+        _obstacles.Add(obstacle);
     }
 
     //draws a gizmo :^)

@@ -53,7 +53,7 @@ public class Obstacle : MonoBehaviour {
 	IEnumerator DestroyObject()
 	{
 		yield return new WaitForSeconds (1);
-		_spawner.RemoveObstacle(this);
+		_spawner.RemoveObstacle(this.gameObject);
 		Destroy(gameObject);
 	}
 }

@@ -71,6 +71,8 @@ public abstract class CharacterBehaviour : MonoBehaviour {
 
     protected float _movement_speed;
 
+    protected bool _is_frozen;
+
     //protected CharacterController _controller;
 
     protected abstract void Move();
@@ -78,7 +80,7 @@ public abstract class CharacterBehaviour : MonoBehaviour {
     protected abstract void Dodge();
 
 
-    private void Start()
+    protected void Start()
     {
         _dash_time = _start_dash_time;
 		_movement_speed = _desired_movement_speed;
@@ -102,6 +104,10 @@ public abstract class CharacterBehaviour : MonoBehaviour {
     protected void FixedUpdate()
     {
         //ball falls to ground if the holding time exceeds
+        if(_is_frozen)
+        {
+            //TODO: decrease _bounce_multiplier
+        }
         if (_ball != null)
         {
             if (_ball_time <= 0)
@@ -116,7 +122,6 @@ public abstract class CharacterBehaviour : MonoBehaviour {
                 _ball_time -= Time.deltaTime;
             }
         }
-        Debug.Log(_ability_duration_left);
         if(_ability_duration_left <= 0 && _character_ability == ABILITY.SPEED)
         {
             _movement_speed = _desired_movement_speed;
@@ -142,26 +147,6 @@ public abstract class CharacterBehaviour : MonoBehaviour {
 			Rigidbody obj_rb = obj.GetComponent<Rigidbody>();
 			dir = obj_rb.velocity * _bounce_multiplier;
 			_rb.velocity = dir;
-            dir.y = 0f;
-//            Debug.Log(dir + " " + dir.normalized + " " + dir.normalized * _bounce_multiplier + " " + _bounce_multiplier);
-//			//dir = dir.normalized;
-//			Debug.Log (dir.magnitude);
-//			dir.Scale( new Vector3( _bounce_multiplier, _bounce_multiplier, _bounce_multiplier));
-//			Debug.Log (dir.magnitude);
-//			_rb.AddForce(dir);
-
-
-            //dir = trans.position - transform.position;
-            //dir.y = 0f;
-//			dir.x = -dir.x ;
-//			dir.z = -dir.z;
-//            Rigidbody obj_rb = obj.GetComponent<Rigidbody>();
-//			dir = -obj_rb.velocity;
-//            obj_rb.velocity = Vector3.zero;
-//			dir = dir.normalized;
-//			//dir.Scale(new Vector3( 1000f,1000f,1000f)); 
-//			Debug.Log (dir.magnitude);
-//			obj_rb.AddForce(dir);
         }
         else
         {
@@ -188,7 +173,6 @@ public abstract class CharacterBehaviour : MonoBehaviour {
     //Destroys the character
     protected void Die()
     {
-        Debug.Log("You died!");
         Destroy(this.gameObject);
     }
 
@@ -228,23 +212,31 @@ public abstract class CharacterBehaviour : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Ball")
         {
-            Transform trans = collision.gameObject.transform;
-            GameObject ball = collision.gameObject;
-            Rigidbody ball_rb = ball.GetComponent<Rigidbody>();
-            if (_ball_velocity.magnitude < _max_ball_velocity && GameManager.current_ball_owner == null && GameManager.restricted_character != this)
+            if (_is_frozen == false)
             {
-                PickUpBall(ball, ball_rb);
+                Transform trans = collision.gameObject.transform;
+                GameObject ball = collision.gameObject;
+                Rigidbody ball_rb = ball.GetComponent<Rigidbody>();
+                if (_ball_velocity.magnitude < _max_ball_velocity && GameManager.current_ball_owner == null && GameManager.restricted_character != this)
+                {
+                    PickUpBall(ball, ball_rb);
+                }
+                else if (GameManager.current_ball_owner == null && _got_hit == false && _ball_velocity.magnitude > _max_ball_velocity && _is_dashing == false)
+                {
+                    _got_hit = true;
+                    _hit_timer = _desired_hit_timer;
+                    ReceiveDamage(ball, trans);
+                }
+                else if (GameManager.current_ball_owner == null && _got_hit == false && _is_dashing == true)
+                {
+                    PickUpBall(ball, ball_rb);
+                }
             }
-            else if (GameManager.current_ball_owner == null && _got_hit == false && _ball_velocity.magnitude > _max_ball_velocity && _is_dashing == false)
+            else
             {
-                _got_hit = true;
-                _hit_timer = _desired_hit_timer;
-                ReceiveDamage(ball, trans);
+                _rb.velocity = Vector3.zero;
             }
-            else if (GameManager.current_ball_owner == null && _got_hit == false && _is_dashing == true)
-            {
-                PickUpBall(ball, ball_rb);
-            }
+            _is_frozen = false;
         }
         if(collision.gameObject.tag == "Border")
         {
@@ -263,16 +255,20 @@ public abstract class CharacterBehaviour : MonoBehaviour {
         }
         else if(ability == ABILITY.FREEZE)
         {
-
+            //root yourself, make yourself invincible and decrease the _bounce_multiplier
+            SetRootTimer(_ability_duration);
+            _is_frozen = true;
         }
         else if(ability == ABILITY.ROOT)
         {
             foreach(CharacterBehaviour character in GameManager.active_characters)
             {
+                Debug.Log(character);
                 if(character != this)
                 {
                     //root him
                     character.SetRootTimer(_ability_duration);
+                    character.GetComponent<Rigidbody>().velocity = Vector3.zero;
                 }
             }
         }
