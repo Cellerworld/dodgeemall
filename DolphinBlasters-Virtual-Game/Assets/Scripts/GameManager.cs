@@ -12,6 +12,12 @@ public class GameManager : MonoBehaviour {
 
     public static CharacterBehaviour restricted_character;
     public static CharacterBehaviour current_ball_owner;
+    public static CharacterBehaviour[] active_characters;
+
+    private void OnLevelWasLoaded(int level)
+    {
+        active_characters = FindObjectsOfType<CharacterBehaviour>();
+    }
 
     public static void SetRestrictedCharacrter(CharacterBehaviour character)
     {

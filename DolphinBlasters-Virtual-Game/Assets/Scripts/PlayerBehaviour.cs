@@ -22,20 +22,27 @@ public class PlayerBehaviour : CharacterBehaviour {
             _ball_rb.velocity = Vector3.zero;
             _ball.transform.position = _holder.position;
         }
-
-        if (_got_hit == false && _is_dashing == false)
+        if(Input.GetButtonDown("Ability" + _player_number) && _power_level >= 0)
         {
-            Move();
-            Rotate();
-
-            //throws the ball once the player presses the fire button and he has something that he can throw
-            if (Input.GetButton("Fire" + _player_number) && _ball != null)
-            {
-                Fire();
-            }
+            UseAbility(_character_ability);
         }
+        if (_root_timer <= 0)
+        {
+            if (_got_hit == false && _is_dashing == false)
+            {
+                Move();
+                Rotate();
 
-        Dodge();
+                //throws the ball once the player presses the fire button and he has something that he can throw
+                if (Input.GetButton("Fire" + _player_number) && _ball != null)
+                {
+                    Fire();
+                }
+            }
+
+            Dodge();
+        }
+        _root_timer -= Time.deltaTime;
     }
 
     //moves the player according to the input given by the controller

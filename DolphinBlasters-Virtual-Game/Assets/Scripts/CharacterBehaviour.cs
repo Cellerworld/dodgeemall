@@ -18,7 +18,7 @@ public abstract class CharacterBehaviour : MonoBehaviour {
     protected float _max_ball_velocity;
 
     [SerializeField]
-    protected float _movement_speed;
+    protected float _desired_movement_speed;
 
     [SerializeField]
     protected Transform _holder;
@@ -57,6 +57,20 @@ public abstract class CharacterBehaviour : MonoBehaviour {
     [SerializeField]
     protected float _desired_hit_timer;
 
+    protected float _power_level;
+
+    public enum ABILITY { TELEPORT, FREEZE, ROOT, SPEED}
+    [SerializeField]
+    protected ABILITY _character_ability;
+    [SerializeField]
+    protected float _ability_duration;
+
+    protected float _ability_duration_left;
+
+    protected float _root_timer;
+
+    protected float _movement_speed;
+
     //protected CharacterController _controller;
 
     protected abstract void Move();
@@ -67,6 +81,11 @@ public abstract class CharacterBehaviour : MonoBehaviour {
     private void Start()
     {
         _dash_time = _start_dash_time;
+    }
+
+    public void SetRootTimer(float root_time)
+    {
+        _root_timer = root_time;
     }
 
     //rotates the player towards the direction he is moving
@@ -96,6 +115,11 @@ public abstract class CharacterBehaviour : MonoBehaviour {
                 _ball_time -= Time.deltaTime;
             }
         }
+        Debug.Log(_ability_duration_left);
+        if(_ability_duration_left <= 0 && _character_ability == ABILITY.SPEED)
+        {
+            _movement_speed = _desired_movement_speed;
+        }
         if(_hit_timer <= 0)
         {
             _got_hit = false;
@@ -104,6 +128,7 @@ public abstract class CharacterBehaviour : MonoBehaviour {
         {
             _hit_timer -= Time.deltaTime;
         }
+        _ability_duration_left -= Time.deltaTime;
     }
 
     //TODO: fix it that the character sometimes doesnt get a draw back
@@ -226,6 +251,34 @@ public abstract class CharacterBehaviour : MonoBehaviour {
             {
                 Die();
             }
+        }
+    }
+
+    protected void UseAbility(ABILITY ability)
+    {
+        if (ability == ABILITY.TELEPORT)
+        {
+
+        }
+        else if(ability == ABILITY.FREEZE)
+        {
+
+        }
+        else if(ability == ABILITY.ROOT)
+        {
+            foreach(CharacterBehaviour character in GameManager.active_characters)
+            {
+                if(character != this)
+                {
+                    //root him
+                    character.SetRootTimer(_ability_duration);
+                }
+            }
+        }
+        else if(ability == ABILITY.SPEED)
+        {
+            _ability_duration_left = _ability_duration;
+            _movement_speed *= 1.5f;
         }
     }
 }
