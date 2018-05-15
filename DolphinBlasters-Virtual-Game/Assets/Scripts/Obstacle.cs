@@ -25,8 +25,8 @@ public class Obstacle : MonoBehaviour {
     {
         if(collision.gameObject.tag == "Ball")
         {
-//			Rigidbody _rb = collision.gameObject.GetComponent<Rigidbody>();
-//			_rb.velocity = -_rb.velocity;
+			Rigidbody _rb = collision.gameObject.GetComponent<Rigidbody>();
+			_rb.velocity = -_rb.velocity;
 			StartCoroutine(DestroyObject());
 //            _spawner.RemoveObstacle(this);
 //            Destroy(gameObject);
