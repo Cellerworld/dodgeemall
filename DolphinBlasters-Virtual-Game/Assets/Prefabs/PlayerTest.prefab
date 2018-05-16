@@ -155,6 +155,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4324885707892400}
+  - component: {fileID: 95009237924882934}
   m_Layer: 0
   m_Name: zielbot
   m_TagString: Untagged
@@ -228,8 +229,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1054108571107824}
-  m_LocalRotation: {x: -0, y: -0.34013015, z: -0, w: 0.94037837}
-  m_LocalPosition: {x: 2.098, y: -0.25, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4324885707892400}
@@ -620,6 +621,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 1
+--- !u!95 &95009237924882934
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1662812726123822}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 01376c576643d304692fe046808a6e1b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114731659372259568
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -637,8 +655,8 @@ MonoBehaviour:
   _max_ball_velocity: 10
   _desired_movement_speed: 500
   _holder: {fileID: 4591612961260248}
-  _dash_speed: 1000
-  _start_dash_time: 0.1
+  _dash_speed: 800
+  _start_dash_time: 0.4
   _max_ball_time: 3
   _desired_hit_timer: 0.75
   _character_ability: 2

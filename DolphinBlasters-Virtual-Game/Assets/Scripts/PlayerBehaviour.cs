@@ -5,9 +5,6 @@ using UnityEngine;
 
 public class PlayerBehaviour : CharacterBehaviour {
 
-    [SerializeField]
-    private int _player_number;
-
     private new void Start()
     {
         base.Start();
@@ -45,6 +42,7 @@ public class PlayerBehaviour : CharacterBehaviour {
             Dodge();
         }
         _root_timer -= Time.deltaTime;
+        HandleAnimtaion();
     }
 
     //moves the player according to the input given by the controller
@@ -86,7 +84,6 @@ public class PlayerBehaviour : CharacterBehaviour {
     //Fires the ball and sets the ball to null
     protected override void Fire()
     {
-        Debug.Log("FIRE!");
         Rigidbody ball_rb = _ball.GetComponent<Rigidbody>();
         ball_rb.velocity = Vector3.zero;
 		ball_rb.AddForce(new Vector3(transform.forward.normalized.x * _throw_power, 0, transform.forward.normalized.z * _throw_power) /* * _throwing_force?*/, ForceMode.Force);
@@ -94,5 +91,6 @@ public class PlayerBehaviour : CharacterBehaviour {
         GameManager.current_ball_owner = null;
         _ball_rb = null;
         _movement_speed = _desired_movement_speed;
+        _anim.Play("Flying_Throw");
     }
 }

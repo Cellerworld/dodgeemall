@@ -76,6 +76,11 @@ public abstract class CharacterBehaviour : MonoBehaviour {
     [SerializeField]
     protected float _slow_down_multiplier;
 
+    [SerializeField]
+    protected int _player_number;
+
+    protected Animator _anim;
+
     //protected CharacterController _controller;
 
     protected abstract void Move();
@@ -85,6 +90,7 @@ public abstract class CharacterBehaviour : MonoBehaviour {
 
     protected void Start()
     {
+        _anim = GetComponentInChildren<Animator>();
         _dash_time = _start_dash_time;
 		_movement_speed = _desired_movement_speed;
     }
@@ -140,6 +146,31 @@ public abstract class CharacterBehaviour : MonoBehaviour {
             _hit_timer -= Time.deltaTime;
         }
         _ability_duration_left -= Time.deltaTime;
+    }
+
+    //TODO find the right value
+    protected void HandleAnimtaion()
+    {
+        if(_is_dashing)
+        {
+            _anim.Play("Dash");
+        }
+        else if(_ball != null && (Mathf.Abs(Input.GetAxis("Vertical" + _player_number)) > 0.1f || Mathf.Abs(Input.GetAxis("Horizontal" + _player_number)) > 0.1f))
+        {
+            _anim.Play("Fly_Ball");
+        }
+        else if(_ball == null && (Mathf.Abs(Input.GetAxis("Vertical" + _player_number)) > 0.1f || Mathf.Abs(Input.GetAxis("Horizontal" + _player_number)) > 0.1f))
+        {
+            _anim.Play("Fly");
+        }
+        else if(_ball != null && (Mathf.Abs(Input.GetAxis("Vertical" + _player_number)) < 0.1f || Mathf.Abs(Input.GetAxis("Horizontal" + _player_number)) < 0.1f))
+        {
+            _anim.Play("Idle_Ball");
+        }
+        else if(_ball == null && (Mathf.Abs(Input.GetAxis("Vertical" + _player_number)) < 0.1f || Mathf.Abs(Input.GetAxis("Horizontal" + _player_number)) < 0.1f))
+        {
+            _anim.Play("Idle");
+        }
     }
 
     //TODO: fix it that the character sometimes doesnt get a draw back
