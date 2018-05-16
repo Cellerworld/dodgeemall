@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class MatchSelectionButtonBehavior : MonoBehaviour {
+public class MatchModeButtonBehavior : MonoBehaviour {
 
 	private bool _is_Selected;
 	private TextMeshProUGUI _current_Text;
