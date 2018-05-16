@@ -73,6 +73,9 @@ public abstract class CharacterBehaviour : MonoBehaviour {
 
     protected bool _is_frozen;
 
+    [SerializeField]
+    protected float _slow_down_multiplier;
+
     //protected CharacterController _controller;
 
     protected abstract void Move();
@@ -116,13 +119,15 @@ public abstract class CharacterBehaviour : MonoBehaviour {
                 _ball = null;
                 GameManager.SetRestrictedCharacrter(this);
                 GameManager.current_ball_owner = null;
+                _movement_speed = _desired_movement_speed;
             }
             else
             {
+                _movement_speed = _movement_speed * _slow_down_multiplier;
                 _ball_time -= Time.deltaTime;
             }
         }
-        if(_ability_duration_left <= 0 && _character_ability == ABILITY.SPEED)
+        if(_ability_duration_left <= 0 && _character_ability == ABILITY.SPEED && _ball == null)
         {
             _movement_speed = _desired_movement_speed;
         }
@@ -237,6 +242,7 @@ public abstract class CharacterBehaviour : MonoBehaviour {
                 _rb.velocity = Vector3.zero;
                 _root_timer = 0f;
                 _is_frozen = false;
+                _rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionY;
             }
         }
         if(collision.gameObject.tag == "Border")
@@ -271,6 +277,7 @@ public abstract class CharacterBehaviour : MonoBehaviour {
             //root yourself, make yourself invincible and decrease the _bounce_multiplier
             SetRootTimer(_ability_duration);
             _is_frozen = true;
+            _rb.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
         }
         else if(ability == ABILITY.ROOT)
         {

@@ -59,7 +59,7 @@ public class ObstacleSpawner : MonoBehaviour {
     }
 
     //draws a gizmo :^)
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.magenta;
         Gizmos.DrawWireSphere(transform.position, _drop_radius);

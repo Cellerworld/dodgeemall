@@ -614,6 +614,7 @@ MonoBehaviour:
   _desired_hit_timer: 0.75
   _character_ability: 1
   _ability_duration: 100
+  _slow_down_multiplier: 0.99
   _player_number: 3
 --- !u!136 &136011002938357812
 CapsuleCollider:
