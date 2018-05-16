@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour {
     public static CharacterBehaviour current_ball_owner;
     public static CharacterBehaviour[] active_characters;
 
-    private void OnLevelWasLoaded(int level)
+    private void Start()
     {
         active_characters = FindObjectsOfType<CharacterBehaviour>();
     }

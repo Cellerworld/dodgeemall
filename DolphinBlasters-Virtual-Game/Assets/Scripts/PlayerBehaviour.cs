@@ -8,8 +8,9 @@ public class PlayerBehaviour : CharacterBehaviour {
     [SerializeField]
     private int _player_number;
 
-    private void Start()
+    private new void Start()
     {
+        base.Start();
         _rb = GetComponent<Rigidbody>();
         //_controller = GetComponent<CharacterController>();
     }
@@ -28,6 +29,7 @@ public class PlayerBehaviour : CharacterBehaviour {
         }
         if (_root_timer <= 0)
         {
+            _is_frozen = false;
             if (_got_hit == false && _is_dashing == false)
             {
                 Move();
