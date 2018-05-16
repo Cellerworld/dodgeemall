@@ -93,5 +93,6 @@ public class PlayerBehaviour : CharacterBehaviour {
         _ball = null;
         GameManager.current_ball_owner = null;
         _ball_rb = null;
+        _movement_speed = _desired_movement_speed;
     }
 }
