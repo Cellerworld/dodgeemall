@@ -830,7 +830,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ec8d737ca85320f4da22e4758be3a9c8, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.014464222
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ec8d737ca85320f4da22e4758be3a9c8, type: 3}
       propertyPath: m_LocalScale.z
@@ -17484,14 +17484,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abc8760ff985a6146bd95cb7ff40a83f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _drop_radius: 10
+  _drop_radius: 8.43
   _max_obstacle_count: 15
   _min_drop_cooldown: 3
   _max_drop_cooldown: 8
   _obstacle:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1328646132038786, guid: 3b15d7792092c314892d5bc36ba62880, type: 2}
+  - {fileID: 1230177670679178, guid: d3f4a61f7393c6747ae2079bbe2120f5, type: 2}
+  - {fileID: 1654626521242002, guid: 87d65eccaca7a4c43967f4014673ebbf, type: 2}
 --- !u!4 &519963627
 Transform:
   m_ObjectHideFlags: 0
@@ -26895,7 +26895,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ec8d737ca85320f4da22e4758be3a9c8, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.013101337
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ec8d737ca85320f4da22e4758be3a9c8, type: 3}
       propertyPath: m_LocalScale.z
@@ -52642,7 +52642,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ec8d737ca85320f4da22e4758be3a9c8, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.013789008
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ec8d737ca85320f4da22e4758be3a9c8, type: 3}
       propertyPath: m_LocalScale.z
