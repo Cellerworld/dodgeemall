@@ -9,6 +9,7 @@ TagManager:
   - Ground
   - Character
   - Obstacle
+  - lores
   layers:
   - Default
   - TransparentFX
