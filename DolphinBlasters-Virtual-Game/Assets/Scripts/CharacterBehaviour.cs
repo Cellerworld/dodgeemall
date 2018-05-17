@@ -209,6 +209,7 @@ public abstract class CharacterBehaviour : MonoBehaviour {
     //Destroys the character
     protected void Die()
     {
+        GameManager.RemovePlayer(this);
         Destroy(this.gameObject);
     }
 
@@ -292,7 +293,7 @@ public abstract class CharacterBehaviour : MonoBehaviour {
             CharacterBehaviour character = null;
             for(int i = 0; i < 100; i++)
             {
-                character = GameManager.active_characters[Random.Range(0, GameManager.active_characters.Length)];
+                character = GameManager.active_characters[Random.Range(0, GameManager.active_characters.Count)];
                 if (character != null && character != this)
                 {
                     break;
