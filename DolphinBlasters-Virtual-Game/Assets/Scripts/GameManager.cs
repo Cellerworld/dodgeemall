@@ -25,6 +25,14 @@ public class GameManager : MonoBehaviour {
         _restriction_timer = _max_restriction_time;
     }
 
+    public static void RemovePlayer(CharacterBehaviour character_to_remove)
+    {
+        for(int i = 0; i < active_characters.Length; i++)
+        {
+            CharacterBehaviour character = active_characters[i];
+        }
+    }
+
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.R))
