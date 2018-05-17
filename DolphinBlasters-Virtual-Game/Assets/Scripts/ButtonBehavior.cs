@@ -18,7 +18,8 @@ public class ButtonBehavior : MonoBehaviour {
 	private int i = 0;
 	// Use this for initialization
 	void Start () {
-		
+		Cursor.visible = false;
+		Cursor.lockState = CursorLockMode.Locked;
 	}
 
 	// Update is called once per frame
@@ -36,6 +37,7 @@ public class ButtonBehavior : MonoBehaviour {
 				_goBackObject.transform.parent.gameObject.SetActive (true);
 				eventSystem.SetSelectedGameObject (_goBackObject);
 				gameObject.transform.parent.gameObject.SetActive (false);
+				return;
 			} 
 			else {
 				Debug.Log (_goBackObject.transform.parent.gameObject.name);
