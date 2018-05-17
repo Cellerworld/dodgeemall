@@ -120,6 +120,8 @@ public abstract class CharacterBehaviour : MonoBehaviour {
             if (_ball_time <= 0)
             {
                 _ball.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                Collider collider = _ball.GetComponent<SphereCollider>();
+                collider.isTrigger = false;
                 _ball = null;
                 GameManager.SetRestrictedCharacrter(this);
                 GameManager.current_ball_owner = null;
