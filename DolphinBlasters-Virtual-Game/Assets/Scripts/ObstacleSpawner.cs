@@ -13,7 +13,7 @@ public class ObstacleSpawner : MonoBehaviour {
     [SerializeField]
     private float _max_drop_cooldown;
     [SerializeField]
-    private GameObject _obstacle;
+    private GameObject[] _obstacle;
 
     private float _drop_cooldown;
     private List<GameObject> _obstacles;
@@ -54,7 +54,7 @@ public class ObstacleSpawner : MonoBehaviour {
     private void DropObstacle()
     {
         Vector3 drop_position = new Vector3(Random.Range(-_drop_radius, _drop_radius), transform.position.y, Random.Range(-_drop_radius, _drop_radius));
-        GameObject obstacle = Instantiate(_obstacle, drop_position, Quaternion.identity);
+        GameObject obstacle = Instantiate(_obstacle[Random.Range(0, _obstacle.Length)], drop_position, Quaternion.identity);
         _obstacles.Add(obstacle);
     }
 

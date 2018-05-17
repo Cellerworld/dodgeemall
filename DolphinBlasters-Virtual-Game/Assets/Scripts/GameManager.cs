@@ -12,11 +12,18 @@ public class GameManager : MonoBehaviour {
 
     public static CharacterBehaviour restricted_character;
     public static CharacterBehaviour current_ball_owner;
-    public static CharacterBehaviour[] active_characters;
+    public static CharacterBehaviour last_ball_owner;
+    public static List<CharacterBehaviour> active_characters;
+    public static bool is_game_over;
 
     private void Start()
     {
-        active_characters = FindObjectsOfType<CharacterBehaviour>();
+        active_characters = new List<CharacterBehaviour>();
+        CharacterBehaviour[] chars = FindObjectsOfType<CharacterBehaviour>();
+        foreach(CharacterBehaviour character in chars)
+        {
+            active_characters.Add(character);
+        }
     }
 
     public static void SetRestrictedCharacrter(CharacterBehaviour character)
@@ -27,9 +34,9 @@ public class GameManager : MonoBehaviour {
 
     public static void RemovePlayer(CharacterBehaviour character_to_remove)
     {
-        for(int i = 0; i < active_characters.Length; i++)
+        if(active_characters.Contains(character_to_remove))
         {
-            CharacterBehaviour character = active_characters[i];
+            active_characters.Remove(character_to_remove);
         }
     }
 
@@ -46,6 +53,11 @@ public class GameManager : MonoBehaviour {
         else
         {
             _restriction_timer -= Time.deltaTime;
+        }
+        if(active_characters.Count <= 1)
+        {
+            is_game_over = true;
+            Debug.Log("The game is over");
         }
     }
 }

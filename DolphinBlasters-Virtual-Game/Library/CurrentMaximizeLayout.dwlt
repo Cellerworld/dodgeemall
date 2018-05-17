@@ -17,12 +17,21 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 30
+<<<<<<< HEAD
     width: 1536
     height: 731
   m_MinSize: {x: 887, y: 492}
   m_MaxSize: {x: 16012, y: 14042}
   vertical: 1
   controlID: 22192
+=======
+    width: 1920
+    height: 947
+  m_MinSize: {x: 879, y: 492}
+  m_MaxSize: {x: 16004, y: 14042}
+  vertical: 0
+  controlID: 14392
+>>>>>>> e3b985939c849035c12902904b34f5c2448b971d
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -118,12 +127,21 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 1536
     height: 731
   m_MinSize: {x: 887, y: 492}
   m_MaxSize: {x: 16012, y: 14042}
   vertical: 0
   controlID: 22193
+=======
+    width: 1525
+    height: 947
+  m_MinSize: {x: 602, y: 492}
+  m_MaxSize: {x: 12002, y: 14042}
+  vertical: 1
+  controlID: 14393
+>>>>>>> e3b985939c849035c12902904b34f5c2448b971d
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -167,6 +185,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 1174
     height: 460
   m_MinSize: {x: 610, y: 221}
@@ -174,6 +193,15 @@ MonoBehaviour:
   vertical: 0
   controlID: 22170
 --- !u!114 &6
+=======
+    width: 1525
+    height: 573
+  m_MinSize: {x: 602, y: 221}
+  m_MaxSize: {x: 12002, y: 4021}
+  vertical: 0
+  controlID: 14257
+--- !u!114 &5
+>>>>>>> e3b985939c849035c12902904b34f5c2448b971d
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -353,6 +381,7 @@ MonoBehaviour:
     height: 439
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
+<<<<<<< HEAD
   lastFramingTime: 4078.528752231884
   m_2DMode: 0
   m_isRotationLocked: 0
@@ -361,6 +390,16 @@ MonoBehaviour:
     m_Target: {x: -4.9779882, y: 1.7057076, z: -7.644315}
     speed: 2
     m_Value: {x: -4.9779882, y: 1.7057076, z: -7.644315}
+=======
+  lastFramingTime: 9669.920585006874
+  m_2DMode: 1
+  m_isRotationLocked: 0
+  m_AudioPlay: 0
+  m_Position:
+    m_Target: {x: 4.2769866, y: 0.46340403, z: -1.546875}
+    speed: 2
+    m_Value: {x: 4.2769866, y: 0.46340403, z: -1.546875}
+>>>>>>> e3b985939c849035c12902904b34f5c2448b971d
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -376,14 +415,15 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
     yGrid:
-      m_Target: 1
-      speed: 2
-      m_Value: 1
-    zGrid:
       m_Target: 0
       speed: 2
       m_Value: 0
+    zGrid:
+      m_Target: 1
+      speed: 2
+      m_Value: 1
   m_Rotation:
+<<<<<<< HEAD
     m_Target: {x: 0.14820923, y: -0.8515042, z: 0.3398829, w: 0.37111127}
     speed: 2
     m_Value: {x: -0.14818926, y: 0.8513895, z: -0.33983713, w: -0.3710613}
@@ -391,12 +431,25 @@ MonoBehaviour:
     m_Target: 3.419784
     speed: 2
     m_Value: 3.419784
-  m_Ortho:
-    m_Target: 0
+=======
+    m_Target: {x: 0, y: 0, z: 0, w: 1}
     speed: 2
-    m_Value: 0
+    m_Value: {x: -0, y: 0, z: -0, w: -1}
+  m_Size:
+    m_Target: 3.270462
+    speed: 2
+    m_Value: 3.270462
+>>>>>>> e3b985939c849035c12902904b34f5c2448b971d
+  m_Ortho:
+    m_Target: 1
+    speed: 2
+    m_Value: 1
   m_ShowGlobalGrid: 1
+<<<<<<< HEAD
   m_LastSceneViewRotation: {x: -0.63445014, y: -0.0041534556, z: 0.0034561271, w: -0.7729449}
+=======
+  m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+>>>>>>> e3b985939c849035c12902904b34f5c2448b971d
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
@@ -418,10 +471,17 @@ MonoBehaviour:
     serializedVersion: 2
     x: 405
     y: 0
+<<<<<<< HEAD
     width: 535
     height: 460
   m_MinSize: {x: 204, y: 221}
   m_MaxSize: {x: 4004, y: 4021}
+=======
+    width: 509
+    height: 573
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+>>>>>>> e3b985939c849035c12902904b34f5c2448b971d
   m_ActualView: {fileID: 2}
   m_Panes:
   - {fileID: 2}
@@ -480,10 +540,17 @@ MonoBehaviour:
     height: 439
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 1386}
     m_SelectedIDs: 2004f2ff
     m_LastClickedID: -916448
     m_ExpandedIDs: 1c04f2ff1e04f2ff2404f2ff2a04f2ffa468f3ff3e13f5fffea8f7ffbab9f7ff98c6f7ffd8d0f7ff3e6af8ffaaf7ffff4ef9ffff9efbffff000000007e310000c8310000083200009432000052330000603300008a33000090330000c8330000083400001c340000283400005234000092350000aa350000b6350000c8350000e0350000e83600008c3700009e370000e0370000
+=======
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 0276f3ff
+    m_LastClickedID: -821758
+    m_ExpandedIDs: 449cf3ff5c9cf3ff5e9cf3ff16a5f3ff18b7f3ff00c4f3ffae40f5ffb240f5ffa6acfdff26e5feff3ae5feff40e5feff56e5feff68e5feffe2e7fefffee7feff0ee8feff26e8feff24eafeff38eafeff4eeafeff60eafeffb0f4ffffc0f4ffffdaf4fffff0f4ffff9efbffff000000005ccb0000
+>>>>>>> e3b985939c849035c12902904b34f5c2448b971d
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -499,7 +566,11 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 0
+<<<<<<< HEAD
       m_ClientGUIView: {fileID: 11}
+=======
+      m_ClientGUIView: {fileID: 10}
+>>>>>>> e3b985939c849035c12902904b34f5c2448b971d
     m_SearchString: 
   m_ExpandedScenes:
   - Arena_test
@@ -532,8 +603,13 @@ MonoBehaviour:
   - {fileID: 15}
   - {fileID: 16}
   m_Selected: 0
+<<<<<<< HEAD
   m_LastSelected: 2
 --- !u!114 &14
+=======
+  m_LastSelected: 1
+--- !u!114 &13
+>>>>>>> e3b985939c849035c12902904b34f5c2448b971d
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -572,10 +648,15 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
+<<<<<<< HEAD
     - Assets/Camera_Profiles
+=======
+    - Assets/Particle
+>>>>>>> e3b985939c849035c12902904b34f5c2448b971d
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
+<<<<<<< HEAD
   - Assets/Camera_Profiles
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\Laury\Documents\GitHub\dodgeemall\DolphinBlasters-Virtual-Game
@@ -585,6 +666,17 @@ MonoBehaviour:
     m_SelectedIDs: 82290000
     m_LastClickedID: 10626
     m_ExpandedIDs: 000000004029000062290000aa290000482a0000742a0000102b0000622b0000022c0000122c00002c2c0000382c0000f02c0000582d00009a2d0000b62d0000ca2f00000430000010300000a8300000c4300000d83a0000da3a000000ca9a3bffffff7f
+=======
+  - Assets/Particle
+  m_LastFoldersGridSize: -1
+  m_LastProjectPath: D:\Saxion\Quarter4\dodgeemall\dodgeemall\DolphinBlasters-Virtual-Game
+  m_IsLocked: 0
+  m_FolderTreeState:
+    scrollPos: {x: 0, y: 79}
+    m_SelectedIDs: ce0e0100
+    m_LastClickedID: 69326
+    m_ExpandedIDs: 000000007828000098280000d22800008029000094290000fe290000382a0000c42a0000d02a0000e62a0000202b00007a2b0000cc2b0000fe2b0000e02d00000c2e0000142e0000802e0000103600001236000000ca9a3bffffff7f
+>>>>>>> e3b985939c849035c12902904b34f5c2448b971d
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -612,7 +704,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 000000004029000062290000aa290000482a0000742a0000102b0000622b0000022c0000122c00002c2c0000382c0000f02c0000582d00009a2d0000b62d0000ca2f00000430000010300000a8300000c4300000d83a0000da3a000000ca9a3bffffff7f
+=======
+    m_ExpandedIDs: 000000007828000098280000d22800008029000094290000fe290000382a0000c42a0000d02a0000e62a0000202b00007a2b0000cc2b0000fe2b0000e02d00000c2e0000142e0000802e0000103600001236000000ca9a3bffffff7f
+>>>>>>> e3b985939c849035c12902904b34f5c2448b971d
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -637,10 +733,17 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
+<<<<<<< HEAD
     m_SelectedInstanceIDs: 2004f2ff
     m_LastClickedInstanceID: -916448
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c623000000000000
+=======
+    m_SelectedInstanceIDs: 0276f3ff
+    m_LastClickedInstanceID: -821758
+    m_HadKeyboardFocusLastEvent: 0
+    m_ExpandedInstanceIDs: c62300004e2c0000
+>>>>>>> e3b985939c849035c12902904b34f5c2448b971d
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -656,7 +759,11 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
+<<<<<<< HEAD
       m_ClientGUIView: {fileID: 13}
+=======
+      m_ClientGUIView: {fileID: 12}
+>>>>>>> e3b985939c849035c12902904b34f5c2448b971d
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -691,7 +798,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 665
-    width: 1529
+    width: 1523
     height: 353
   m_PersistentViewDataDictionary: {fileID: 0}
 --- !u!114 &16
