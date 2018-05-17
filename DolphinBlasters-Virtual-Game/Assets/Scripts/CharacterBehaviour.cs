@@ -81,8 +81,6 @@ public abstract class CharacterBehaviour : MonoBehaviour {
 
     protected Animator _anim;
 
-    //protected CharacterController _controller;
-
     protected abstract void Move();
     protected abstract void Fire();
     protected abstract void Dodge();
@@ -112,10 +110,10 @@ public abstract class CharacterBehaviour : MonoBehaviour {
 
     protected void FixedUpdate()
     {
-        //ball falls to ground if the holding time exceeds
         if(_is_frozen)
         {
-            //TODO: decrease _bounce_multiplier
+            _bounce_multiplier -= 0.0001f;
+            Debug.Log(_bounce_multiplier);
         }
         if (_ball != null)
         {
@@ -172,13 +170,11 @@ public abstract class CharacterBehaviour : MonoBehaviour {
             _anim.Play("Idle");
         }
     }
-
-    //TODO: fix it that the character sometimes doesnt get a draw back
+    
     protected void CalculateBlowBack(GameObject obj, Transform trans)
     {
         if(obj.tag == "Ball")
         {
-			//_rb.velocity = Vector3.zero;
             Vector3 dir = transform.position - trans.position;
 			Rigidbody obj_rb = obj.GetComponent<Rigidbody>();
 			dir = obj_rb.velocity * _bounce_multiplier;
@@ -236,11 +232,19 @@ public abstract class CharacterBehaviour : MonoBehaviour {
 
     protected void PickUpBall(GameObject ball, Rigidbody ball_rb)
     {
+        Collider collider = ball.GetComponent<SphereCollider>();
+        collider.isTrigger = true;
         _ball = ball;
         ball_rb.velocity = Vector3.zero;
         _ball_time = _max_ball_time;
         GameManager.current_ball_owner = this;
+        GameManager.last_ball_owner = this;
         _ball_rb = ball_rb;
+    }
+
+    public void AddPowerLevel(int value)
+    {
+        _power_level += value;
     }
 
     //recognizes collisions
@@ -256,16 +260,19 @@ public abstract class CharacterBehaviour : MonoBehaviour {
                 Rigidbody ball_rb = ball.GetComponent<Rigidbody>();
                 if (_ball_velocity.magnitude < _max_ball_velocity && GameManager.current_ball_owner == null && GameManager.restricted_character != this)
                 {
+                    AddPowerLevel(5);
                     PickUpBall(ball, ball_rb);
                 }
                 else if (GameManager.current_ball_owner == null && _got_hit == false && _ball_velocity.magnitude > _max_ball_velocity && _is_dashing == false)
                 {
+                    GameManager.last_ball_owner.AddPowerLevel(15);
                     _got_hit = true;
                     _hit_timer = _desired_hit_timer;
                     ReceiveDamage(ball, trans);
                 }
                 else if (GameManager.current_ball_owner == null && _got_hit == false && _is_dashing == true)
                 {
+                    AddPowerLevel(10);
                     PickUpBall(ball, ball_rb);
                 }
             }

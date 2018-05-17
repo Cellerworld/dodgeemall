@@ -12,7 +12,9 @@ public class GameManager : MonoBehaviour {
 
     public static CharacterBehaviour restricted_character;
     public static CharacterBehaviour current_ball_owner;
+    public static CharacterBehaviour last_ball_owner;
     public static List<CharacterBehaviour> active_characters;
+    public static bool is_game_over;
 
     private void Start()
     {
@@ -54,11 +56,8 @@ public class GameManager : MonoBehaviour {
         }
         if(active_characters.Count <= 1)
         {
+            is_game_over = true;
             Debug.Log("The game is over");
-        }
-        foreach(CharacterBehaviour character in active_characters)
-        {
-            Debug.Log(character);
         }
     }
 }
