@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SliderBehavior : MonoBehaviour {
 
+
+
 	// Use this for initialization
 	void Start () {
 		
