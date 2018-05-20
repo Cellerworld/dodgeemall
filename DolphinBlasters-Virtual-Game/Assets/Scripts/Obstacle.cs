@@ -18,15 +18,16 @@ public class Obstacle : MonoBehaviour {
 
     private void Update()
     {
-        _canvas.transform.position = new Vector3(transform.position.x, 0f, transform.position.z);
+        _canvas.transform.position = new Vector3(transform.position.x, 0.1f, transform.position.z);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag == "Ball")
         {
-            _spawner.RemoveObstacle(this);
-            Destroy(gameObject);
+			Rigidbody _rb = collision.gameObject.GetComponent<Rigidbody>();
+			_rb.velocity = -_rb.velocity;
+			StartCoroutine(DestroyObject());
             return;
         }
         if(collision.gameObject.tag == "Ground")
@@ -46,4 +47,11 @@ public class Obstacle : MonoBehaviour {
             return;
         }
     }
+
+	IEnumerator DestroyObject()
+	{
+		yield return new WaitForSeconds (1);
+		_spawner.RemoveObstacle(this.gameObject);
+		Destroy(gameObject);
+	}
 }
