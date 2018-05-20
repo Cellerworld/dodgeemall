@@ -22,6 +22,8 @@ public class playerSelectionControllerBehavior : MonoBehaviour {
 
 	private playerSelectScreenController manager;
 
+	private bool _hasDecided;
+
 	private int _taken_player = 5; //5 is default for no player
 
 	private float buffer = 0.015f;
@@ -32,77 +34,79 @@ public class playerSelectionControllerBehavior : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//top left
-		if(Input.GetAxis("Horizontal"+  _controllerNumber) < -buffer && Input.GetAxis("Vertical"+  _controllerNumber) > buffer && !manager.GetTakenScreen(0))
-		{
-			manager.UnselectScreen(_taken_player-1);
-			_taken_player = 1;
-			manager.SetScreenTaken(_taken_player-1);
-			_imgs [0].sprite = _my_sprites [0];
-			if (!manager.GetTakenScreen (1)) {
-				_imgs [1].sprite = _normal_sprites [1];
+		if (manager.GetIsRegistrated(_controllerNumber-1) && !_hasDecided) {
+			if (Input.GetButtonDown ("Submit"+_controllerNumber)) {
+				manager.tryStartCharacterSelect (true,_controllerNumber);
+				_hasDecided = true;
 			}
-			if (!manager.GetTakenScreen (2)) {
-				_imgs [2].sprite = _normal_sprites [2];
+			//top left
+			if (Input.GetAxis ("Horizontal" + _controllerNumber) < -buffer && Input.GetAxis ("Vertical" + _controllerNumber) > buffer && !manager.GetTakenScreen (0)) {
+				manager.UnselectScreen (_taken_player - 1);
+				_taken_player = 1;
+				manager.SetScreenTaken (_taken_player - 1);
+				_imgs [0].sprite = _my_sprites [0];
+				if (!manager.GetTakenScreen (1)) {
+					_imgs [1].sprite = _normal_sprites [1];
+				}
+				if (!manager.GetTakenScreen (2)) {
+					_imgs [2].sprite = _normal_sprites [2];
+				}
+				if (!manager.GetTakenScreen (3)) {
+					_imgs [3].sprite = _normal_sprites [3];
+				}
+				//selectPlayer (4,0,1,3,2);
 			}
-			if (!manager.GetTakenScreen (3)) {
-				_imgs [3].sprite = _normal_sprites [3];
+			//top right
+			if (Input.GetAxis ("Horizontal" + _controllerNumber) > buffer && Input.GetAxis ("Vertical" + _controllerNumber) > buffer && !manager.GetTakenScreen (1)) {
+				manager.UnselectScreen (_taken_player - 1);
+				_taken_player = 2;
+				manager.SetScreenTaken (_taken_player - 1);
+				if (!manager.GetTakenScreen (0)) {
+					_imgs [0].sprite = _normal_sprites [0];
+				}
+				_imgs [1].sprite = _my_sprites [1];
+				if (!manager.GetTakenScreen (2)) {
+					_imgs [2].sprite = _normal_sprites [2];
+				}
+				if (!manager.GetTakenScreen (3)) {
+					_imgs [3].sprite = _normal_sprites [3];
+				}
+				//selectPlayer (4,1,0,3,2);
 			}
-			//selectPlayer (4,0,1,3,2);
-		}
-		//top right
-		if(Input.GetAxis("Horizontal"+  _controllerNumber) > buffer && Input.GetAxis("Vertical"+  _controllerNumber) > buffer && !manager.GetTakenScreen(1))
-		{
-			manager.UnselectScreen(_taken_player-1);
-			_taken_player = 2;
-			manager.SetScreenTaken(_taken_player-1);
-			if (!manager.GetTakenScreen (0)) {
-				_imgs [0].sprite = _normal_sprites [0];
+			//bottom left
+			if (Input.GetAxis ("Horizontal" + _controllerNumber) < -buffer && Input.GetAxis ("Vertical" + _controllerNumber) < -buffer && !manager.GetTakenScreen (2)) {
+				manager.UnselectScreen (_taken_player - 1);
+				_taken_player = 3;
+				manager.SetScreenTaken (_taken_player - 1);
+				if (!manager.GetTakenScreen (0)) {
+					_imgs [0].sprite = _normal_sprites [0];
+				}
+				if (!manager.GetTakenScreen (1)) {
+					_imgs [1].sprite = _normal_sprites [1];
+				}
+				_imgs [2].sprite = _my_sprites [2];
+				if (!manager.GetTakenScreen (3)) {
+					_imgs [3].sprite = _normal_sprites [3];
+				}
+				//selectPlayer (4,2,0,1,3);
 			}
-			_imgs [1].sprite = _my_sprites [1];
-			if (!manager.GetTakenScreen (2)) {
-				_imgs [2].sprite = _normal_sprites [2];
+			//bottom right
+			if (Input.GetAxis ("Horizontal" + _controllerNumber) > buffer && Input.GetAxis ("Vertical" + _controllerNumber) < -buffer && !manager.GetTakenScreen (3)) {
+				manager.UnselectScreen (_taken_player - 1);
+				_taken_player = 4;
+				manager.SetScreenTaken (_taken_player - 1);
+				if (!manager.GetTakenScreen (0)) {
+					_imgs [0].sprite = _normal_sprites [0];
+				}
+				if (!manager.GetTakenScreen (1)) {
+					_imgs [1].sprite = _normal_sprites [1];
+				}
+				if (!manager.GetTakenScreen (2)) {
+					_imgs [2].sprite = _normal_sprites [2];
+				}
+				_imgs [3].sprite = _my_sprites [3];
+				//selectPlayer (4,3,0,1,2);
 			}
-			if (!manager.GetTakenScreen (3)) {
-				_imgs [3].sprite = _normal_sprites [3];
-			}
-			//selectPlayer (4,1,0,3,2);
-		}
-		//bottom left
-		if(Input.GetAxis("Horizontal"+  _controllerNumber) < -buffer && Input.GetAxis("Vertical"+  _controllerNumber) < -buffer && !manager.GetTakenScreen(2))
-		{
-			manager.UnselectScreen(_taken_player-1);
-			_taken_player = 3;
-			manager.SetScreenTaken(_taken_player-1);
-			if (!manager.GetTakenScreen (0)) {
-				_imgs [0].sprite = _normal_sprites [0];
-			}
-			if (!manager.GetTakenScreen (1)) {
-				_imgs [1].sprite = _normal_sprites [1];
-			}
-			_imgs [2].sprite = _my_sprites [2];
-			if (!manager.GetTakenScreen (3)) {
-				_imgs [3].sprite = _normal_sprites [3];
-			}
-			//selectPlayer (4,2,0,1,3);
-		}
-		//bottom right
-		if(Input.GetAxis("Horizontal"+  _controllerNumber) > buffer && Input.GetAxis("Vertical"+  _controllerNumber) < -buffer && !manager.GetTakenScreen(3))
-		{
-			manager.UnselectScreen(_taken_player-1);
-			_taken_player = 4;
-			manager.SetScreenTaken(_taken_player-1);
-			if (!manager.GetTakenScreen (0)) {
-				_imgs [0].sprite = _normal_sprites [0];
-			}
-			if (!manager.GetTakenScreen (1)) {
-				_imgs [1].sprite = _normal_sprites [1];
-			}
-			if (!manager.GetTakenScreen (2)) {
-				_imgs [2].sprite = _normal_sprites [2];
-			}
-			_imgs [3].sprite = _my_sprites [3];
-			//selectPlayer (4,3,0,1,2);
 		}
 	}
 
