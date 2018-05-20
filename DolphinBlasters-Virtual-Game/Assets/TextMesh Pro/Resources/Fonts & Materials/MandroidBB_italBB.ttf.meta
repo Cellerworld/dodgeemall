@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: ce4189299384dc94c9e36a09b088d9bb
+timeCreated: 1526468106
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Mandroid BB
+  fontNames:
+  - Mandroid BB
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 6901a9e931489b743807c89075f5ad59, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

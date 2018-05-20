@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/Arena_test.unity
+=======
+- path: Assets/Scenes/Player_selection.unity
+>>>>>>> menu
   isLoaded: 1
   isActive: 1
