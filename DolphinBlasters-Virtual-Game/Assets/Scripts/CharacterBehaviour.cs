@@ -76,7 +76,10 @@ public abstract class CharacterBehaviour : MonoBehaviour {
     [SerializeField]
     protected float _slow_down_multiplier;
 
-    //protected CharacterController _controller;
+    [SerializeField]
+    protected int _player_number;
+
+    protected Animator _anim;
 
     protected abstract void Move();
     protected abstract void Fire();
@@ -85,6 +88,7 @@ public abstract class CharacterBehaviour : MonoBehaviour {
 
     protected void Start()
     {
+        _anim = GetComponentInChildren<Animator>();
         _dash_time = _start_dash_time;
 		_movement_speed = _desired_movement_speed;
     }
@@ -106,16 +110,18 @@ public abstract class CharacterBehaviour : MonoBehaviour {
 
     protected void FixedUpdate()
     {
-        //ball falls to ground if the holding time exceeds
         if(_is_frozen)
         {
-            //TODO: decrease _bounce_multiplier
+            _bounce_multiplier -= 0.0001f;
+            Debug.Log(_bounce_multiplier);
         }
         if (_ball != null)
         {
             if (_ball_time <= 0)
             {
                 _ball.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                Collider collider = _ball.GetComponent<SphereCollider>();
+                collider.isTrigger = false;
                 _ball = null;
                 GameManager.SetRestrictedCharacrter(this);
                 GameManager.current_ball_owner = null;
@@ -142,12 +148,35 @@ public abstract class CharacterBehaviour : MonoBehaviour {
         _ability_duration_left -= Time.deltaTime;
     }
 
-    //TODO: fix it that the character sometimes doesnt get a draw back
+    //TODO find the right value
+    protected void HandleAnimtaion()
+    {
+        if(_is_dashing)
+        {
+            _anim.Play("Dash");
+        }
+        else if(_ball != null && (Mathf.Abs(Input.GetAxis("Vertical" + _player_number)) > 0.1f || Mathf.Abs(Input.GetAxis("Horizontal" + _player_number)) > 0.1f))
+        {
+            _anim.Play("Fly_Ball");
+        }
+        else if(_ball == null && (Mathf.Abs(Input.GetAxis("Vertical" + _player_number)) > 0.1f || Mathf.Abs(Input.GetAxis("Horizontal" + _player_number)) > 0.1f))
+        {
+            _anim.Play("Fly");
+        }
+        else if(_ball != null && (Mathf.Abs(Input.GetAxis("Vertical" + _player_number)) < 0.1f || Mathf.Abs(Input.GetAxis("Horizontal" + _player_number)) < 0.1f))
+        {
+            _anim.Play("Idle_Ball");
+        }
+        else if(_ball == null && (Mathf.Abs(Input.GetAxis("Vertical" + _player_number)) < 0.1f || Mathf.Abs(Input.GetAxis("Horizontal" + _player_number)) < 0.1f))
+        {
+            _anim.Play("Idle");
+        }
+    }
+    
     protected void CalculateBlowBack(GameObject obj, Transform trans)
     {
         if(obj.tag == "Ball")
         {
-			//_rb.velocity = Vector3.zero;
             Vector3 dir = transform.position - trans.position;
 			Rigidbody obj_rb = obj.GetComponent<Rigidbody>();
 			dir = obj_rb.velocity * _bounce_multiplier;
@@ -178,6 +207,7 @@ public abstract class CharacterBehaviour : MonoBehaviour {
     //Destroys the character
     protected void Die()
     {
+        GameManager.RemovePlayer(this);
         Destroy(this.gameObject);
     }
 
@@ -204,11 +234,19 @@ public abstract class CharacterBehaviour : MonoBehaviour {
 
     protected void PickUpBall(GameObject ball, Rigidbody ball_rb)
     {
+        Collider collider = ball.GetComponent<SphereCollider>();
+        collider.isTrigger = true;
         _ball = ball;
         ball_rb.velocity = Vector3.zero;
         _ball_time = _max_ball_time;
         GameManager.current_ball_owner = this;
+        GameManager.last_ball_owner = this;
         _ball_rb = ball_rb;
+    }
+
+    public void AddPowerLevel(int value)
+    {
+        _power_level += value;
     }
 
     //recognizes collisions
@@ -224,16 +262,19 @@ public abstract class CharacterBehaviour : MonoBehaviour {
                 Rigidbody ball_rb = ball.GetComponent<Rigidbody>();
                 if (_ball_velocity.magnitude < _max_ball_velocity && GameManager.current_ball_owner == null && GameManager.restricted_character != this)
                 {
+                    AddPowerLevel(5);
                     PickUpBall(ball, ball_rb);
                 }
                 else if (GameManager.current_ball_owner == null && _got_hit == false && _ball_velocity.magnitude > _max_ball_velocity && _is_dashing == false)
                 {
+                    GameManager.last_ball_owner.AddPowerLevel(15);
                     _got_hit = true;
                     _hit_timer = _desired_hit_timer;
                     ReceiveDamage(ball, trans);
                 }
                 else if (GameManager.current_ball_owner == null && _got_hit == false && _is_dashing == true)
                 {
+                    AddPowerLevel(10);
                     PickUpBall(ball, ball_rb);
                 }
             }
@@ -261,7 +302,7 @@ public abstract class CharacterBehaviour : MonoBehaviour {
             CharacterBehaviour character = null;
             for(int i = 0; i < 100; i++)
             {
-                character = GameManager.active_characters[Random.Range(0, GameManager.active_characters.Length)];
+                character = GameManager.active_characters[Random.Range(0, GameManager.active_characters.Count)];
                 if (character != null && character != this)
                 {
                     break;

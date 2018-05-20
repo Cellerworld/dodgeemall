@@ -18,7 +18,7 @@ public class Obstacle : MonoBehaviour {
 
     private void Update()
     {
-        _canvas.transform.position = new Vector3(transform.position.x, -1f, transform.position.z);
+        _canvas.transform.position = new Vector3(transform.position.x, 0.1f, transform.position.z);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -28,8 +28,6 @@ public class Obstacle : MonoBehaviour {
 			Rigidbody _rb = collision.gameObject.GetComponent<Rigidbody>();
 			_rb.velocity = -_rb.velocity;
 			StartCoroutine(DestroyObject());
-//            _spawner.RemoveObstacle(this);
-//            Destroy(gameObject);
             return;
         }
         if(collision.gameObject.tag == "Ground")
