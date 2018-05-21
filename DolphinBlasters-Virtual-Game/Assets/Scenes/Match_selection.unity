@@ -291,6 +291,7 @@ GameObject:
   - component: {fileID: 259508923}
   - component: {fileID: 259508922}
   - component: {fileID: 259508921}
+  - component: {fileID: 259508924}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -391,6 +392,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 259508919}
+--- !u!114 &259508924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 259508919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180456df522e4304ba1d41b76c053e2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &417401793
 GameObject:
   m_ObjectHideFlags: 0
@@ -503,14 +515,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 518957665}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b68b4c7ec711fff4f8e7ee32f3fb327a, type: 3}
+  m_Script: {fileID: 11500000, guid: b8534922ce637c340a48372423c049d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _texts:
-  - 3
-  - 5
-  - 9
-  - 'infinity '
+  - easy
+  - normal
+  - hard
+  - impossible
 --- !u!114 &518957668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -532,9 +544,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: INFINITY
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d023312404ad22548a94e40564ae56b3, type: 2}
-  m_sharedMaterial: {fileID: 21091897352132082, guid: d023312404ad22548a94e40564ae56b3,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -687,9 +698,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: ROUNDS
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d023312404ad22548a94e40564ae56b3, type: 2}
-  m_sharedMaterial: {fileID: 21091897352132082, guid: d023312404ad22548a94e40564ae56b3,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -975,7 +985,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates:
-  - eventID: 0
+  - eventID: 9
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -992,7 +1002,7 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  - eventID: 1
+  - eventID: 10
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -1141,9 +1151,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: INFINITY
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d023312404ad22548a94e40564ae56b3, type: 2}
-  m_sharedMaterial: {fileID: 21091897352132082, guid: d023312404ad22548a94e40564ae56b3,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1248,14 +1257,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 998599442}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b68b4c7ec711fff4f8e7ee32f3fb327a, type: 3}
+  m_Script: {fileID: 11500000, guid: b8534922ce637c340a48372423c049d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _texts:
   - 3
   - 5
   - 9
-  - 'infinity '
+  - INFINITY
 --- !u!1 &1006343111
 GameObject:
   m_ObjectHideFlags: 0
@@ -1367,7 +1376,7 @@ MonoBehaviour:
   m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1919597490}
   m_sendNavigationEvents: 1
   m_DragThreshold: 5
 --- !u!4 &1280690819
@@ -1439,9 +1448,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: difficulty
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d023312404ad22548a94e40564ae56b3, type: 2}
-  m_sharedMaterial: {fileID: 21091897352132082, guid: d023312404ad22548a94e40564ae56b3,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1594,9 +1602,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: MATCH SELECT
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d023312404ad22548a94e40564ae56b3, type: 2}
-  m_sharedMaterial: {fileID: 21091897352132082, guid: d023312404ad22548a94e40564ae56b3,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2037,7 +2044,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates:
-  - eventID: 0
+  - eventID: 9
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -2054,7 +2061,7 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  - eventID: 1
+  - eventID: 10
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -2128,9 +2135,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: 'START GAME '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d023312404ad22548a94e40564ae56b3, type: 2}
-  m_sharedMaterial: {fileID: 21091897352132082, guid: d023312404ad22548a94e40564ae56b3,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
