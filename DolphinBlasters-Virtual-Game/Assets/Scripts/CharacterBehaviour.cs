@@ -5,6 +5,12 @@ using UnityEngine;
 //[RequireComponent(typeof(CharacterController))]
 public abstract class CharacterBehaviour : MonoBehaviour {
 
+    [SerializeField]
+    protected AudioClip[] _hit_sounds;
+
+    [SerializeField]
+    protected AudioClip _ability_clip;
+
 	[SerializeField]
 	protected float _throw_power;
 
@@ -79,7 +85,20 @@ public abstract class CharacterBehaviour : MonoBehaviour {
     [SerializeField]
     protected int _player_number;
 
+    [SerializeField]
+    protected float _needed_power_level;
+
+    [SerializeField]
+    protected GameObject _ability_particle;
+
+    [SerializeField]
+    protected Transform _rainbow_start;
+
+    protected GameObject _active_particle;
+
     protected Animator _anim;
+
+    protected AudioSource _audio;
 
     protected abstract void Move();
     protected abstract void Fire();
@@ -88,6 +107,7 @@ public abstract class CharacterBehaviour : MonoBehaviour {
 
     protected void Start()
     {
+        _audio = GetComponent<AudioSource>();
         _anim = GetComponentInChildren<Animator>();
         _dash_time = _start_dash_time;
 		_movement_speed = _desired_movement_speed;
@@ -110,10 +130,9 @@ public abstract class CharacterBehaviour : MonoBehaviour {
 
     protected void FixedUpdate()
     {
-        if(_is_frozen)
+        if (_is_frozen)
         {
             _bounce_multiplier -= 0.0001f;
-            Debug.Log(_bounce_multiplier);
         }
         if (_ball != null)
         {
@@ -151,7 +170,15 @@ public abstract class CharacterBehaviour : MonoBehaviour {
     //TODO find the right value
     protected void HandleAnimtaion()
     {
-        if(_is_dashing)
+        if(_root_timer >= 0)
+        {
+            _anim.Play("Idle");
+        }
+        else if(_root_timer >= 0 && _ball != null)
+        {
+            _anim.Play("Idle_Ball");
+        }
+        else if(_is_dashing)
         {
             _anim.Play("Dash");
         }
@@ -186,7 +213,6 @@ public abstract class CharacterBehaviour : MonoBehaviour {
         {
             Vector3 dir = transform.position - trans.position;
             dir.y = 0f;
-            Debug.Log(dir + " " + dir.normalized + " " + dir.normalized * _bounce_multiplier + " " + _bounce_multiplier);
             _rb.AddForce(dir.normalized * 0.1f * _bounce_multiplier);
         }
     }
@@ -267,7 +293,13 @@ public abstract class CharacterBehaviour : MonoBehaviour {
                 }
                 else if (GameManager.current_ball_owner == null && _got_hit == false && _ball_velocity.magnitude > _max_ball_velocity && _is_dashing == false)
                 {
-                    GameManager.last_ball_owner.AddPowerLevel(15);
+                    _audio.Stop();
+                    _audio.clip = _hit_sounds[Random.Range(0, _hit_sounds.Length)];
+                    _audio.Play();
+                    if (GameManager.last_ball_owner != null)
+                    {
+                        GameManager.last_ball_owner.AddPowerLevel(15);
+                    }
                     _got_hit = true;
                     _hit_timer = _desired_hit_timer;
                     ReceiveDamage(ball, trans);
@@ -280,6 +312,10 @@ public abstract class CharacterBehaviour : MonoBehaviour {
             }
             else
             {
+                if(_active_particle != null)
+                {
+                    Destroy(_active_particle);
+                }
                 _rb.velocity = Vector3.zero;
                 _root_timer = 0f;
                 _is_frozen = false;
@@ -297,6 +333,9 @@ public abstract class CharacterBehaviour : MonoBehaviour {
 
     protected void UseAbility(ABILITY ability)
     {
+        _audio.Stop();
+        _audio.clip = _ability_clip;
+        _audio.Play();
         if (ability == ABILITY.TELEPORT)
         {
             CharacterBehaviour character = null;
@@ -309,6 +348,13 @@ public abstract class CharacterBehaviour : MonoBehaviour {
                 }
             }
             //swap places with the target
+            Vector3 pos = character.transform.position;
+            pos.y += 1f;
+            Destroy(Instantiate(_ability_particle, character.transform.position, Quaternion.Euler(-90, 0, 0)), 1f);
+            pos = transform.position;
+            pos.y += 1f;
+            Destroy(Instantiate(_ability_particle, transform.position, Quaternion.Euler(-90, 0, 0)), 1f);
+
             Vector3 target_pos = character.transform.position;
             character.transform.position = transform.position;
             transform.position = target_pos;
@@ -316,6 +362,9 @@ public abstract class CharacterBehaviour : MonoBehaviour {
         else if(ability == ABILITY.FREEZE)
         {
             //root yourself, make yourself invincible and decrease the _bounce_multiplier
+            Vector3 pos = transform.position;
+            pos.y += 1f;
+            _active_particle = Instantiate(_ability_particle, pos, Quaternion.identity);
             SetRootTimer(_ability_duration);
             _is_frozen = true;
             _rb.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
@@ -324,10 +373,10 @@ public abstract class CharacterBehaviour : MonoBehaviour {
         {
             foreach(CharacterBehaviour character in GameManager.active_characters)
             {
-                Debug.Log(character);
                 if(character != this)
                 {
                     //root the other players
+                    Destroy(Instantiate(_ability_particle, character.transform.position, Quaternion.identity), _ability_duration);
                     character.SetRootTimer(_ability_duration);
                     character.GetComponent<Rigidbody>().velocity = Vector3.zero;
                 }
@@ -335,6 +384,10 @@ public abstract class CharacterBehaviour : MonoBehaviour {
         }
         else if(ability == ABILITY.SPEED)
         {
+            Vector3 pos = transform.position;
+            pos.y += 0.75f;
+            pos.z -= 2f;
+            Destroy(Instantiate(_ability_particle, _rainbow_start), _ability_duration);//.position, Quaternion.identity, transform), _ability_duration);
             _ability_duration_left = _ability_duration;
             _movement_speed *= 1.5f;
         }

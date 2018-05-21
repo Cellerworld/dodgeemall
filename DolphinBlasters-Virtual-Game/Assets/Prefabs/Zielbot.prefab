@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 136457756650417686}
   - component: {fileID: 54056466574482506}
   - component: {fileID: 114731659372259568}
+  - component: {fileID: 82627115976605308}
   m_Layer: 0
   m_Name: Zielbot
   m_TagString: Character
@@ -247,7 +248,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1662812726123822}
-  m_LocalRotation: {x: 0, y: 0.38268343, z: 0, w: 0.92387956}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -255,7 +256,7 @@ Transform:
   - {fileID: 4463721550358588}
   m_Father: {fileID: 4495797984249248}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4442215568025368
 Transform:
   m_ObjectHideFlags: 1
@@ -290,14 +291,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1054108571107824}
-  m_LocalRotation: {x: -0, y: 0.9926829, z: -0, w: 0.1207509}
-  m_LocalPosition: {x: -2.56, y: 0, z: 2.13}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.56, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4324885707892400}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 166.12901, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4591612961260248
 Transform:
   m_ObjectHideFlags: 1
@@ -683,6 +684,86 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 1
+--- !u!82 &82627115976605308
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1054108571107824}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95009237924882934
 Animator:
   serializedVersion: 3
@@ -711,6 +792,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98c922d828a38d44991d354caa4baac9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _hit_sounds:
+  - {fileID: 8300000, guid: cbe2bd94952c6eb4b8f7fc25e311e5ad, type: 3}
+  - {fileID: 8300000, guid: 3c1589a735e36574e89e994c3edbeeb7, type: 3}
+  - {fileID: 8300000, guid: 0ffaa8911eb61b248b3a64be78cd7403, type: 3}
+  - {fileID: 8300000, guid: a0e768a7a4cd69e4ca916b92ab8db95b, type: 3}
+  _ability_clip: {fileID: 8300000, guid: 0819d26d463a3474292c2ffa48364832, type: 3}
   _throw_power: 2000
   _die_magnitude: 8
   _bounce_multiplier: 0.1
@@ -725,6 +812,10 @@ MonoBehaviour:
   _ability_duration: 0.75
   _slow_down_multiplier: 0.99
   _player_number: 1
+  _needed_power_level: 0
+  _ability_particle: {fileID: 1430425722941944, guid: e451c4dd6c642c64783391cb8a979d6a,
+    type: 2}
+  _rainbow_start: {fileID: 0}
 --- !u!136 &136322933927710142
 CapsuleCollider:
   m_ObjectHideFlags: 1
