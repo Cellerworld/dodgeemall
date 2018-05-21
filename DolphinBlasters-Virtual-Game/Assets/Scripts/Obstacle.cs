@@ -25,6 +25,7 @@ public class Obstacle : MonoBehaviour {
     {
         if(collision.gameObject.tag == "Ball")
         {
+            GetComponent<AudioSource>().Play();
 			Rigidbody _rb = collision.gameObject.GetComponent<Rigidbody>();
 			_rb.velocity = -_rb.velocity;
 			StartCoroutine(DestroyObject());

@@ -5,6 +5,12 @@ using UnityEngine;
 //[RequireComponent(typeof(CharacterController))]
 public abstract class CharacterBehaviour : MonoBehaviour {
 
+    [SerializeField]
+    protected AudioClip[] _hit_sounds;
+
+    [SerializeField]
+    protected AudioClip _ability_clip;
+
 	[SerializeField]
 	protected float _throw_power;
 
@@ -92,6 +98,8 @@ public abstract class CharacterBehaviour : MonoBehaviour {
 
     protected Animator _anim;
 
+    protected AudioSource _audio;
+
     protected abstract void Move();
     protected abstract void Fire();
     protected abstract void Dodge();
@@ -99,6 +107,7 @@ public abstract class CharacterBehaviour : MonoBehaviour {
 
     protected void Start()
     {
+        _audio = GetComponent<AudioSource>();
         _anim = GetComponentInChildren<Animator>();
         _dash_time = _start_dash_time;
 		_movement_speed = _desired_movement_speed;
@@ -121,7 +130,7 @@ public abstract class CharacterBehaviour : MonoBehaviour {
 
     protected void FixedUpdate()
     {
-        if(_is_frozen)
+        if (_is_frozen)
         {
             _bounce_multiplier -= 0.0001f;
         }
@@ -284,7 +293,13 @@ public abstract class CharacterBehaviour : MonoBehaviour {
                 }
                 else if (GameManager.current_ball_owner == null && _got_hit == false && _ball_velocity.magnitude > _max_ball_velocity && _is_dashing == false)
                 {
-                    GameManager.last_ball_owner.AddPowerLevel(15);
+                    _audio.Stop();
+                    _audio.clip = _hit_sounds[Random.Range(0, _hit_sounds.Length)];
+                    _audio.Play();
+                    if (GameManager.last_ball_owner != null)
+                    {
+                        GameManager.last_ball_owner.AddPowerLevel(15);
+                    }
                     _got_hit = true;
                     _hit_timer = _desired_hit_timer;
                     ReceiveDamage(ball, trans);
@@ -318,6 +333,9 @@ public abstract class CharacterBehaviour : MonoBehaviour {
 
     protected void UseAbility(ABILITY ability)
     {
+        _audio.Stop();
+        _audio.clip = _ability_clip;
+        _audio.Play();
         if (ability == ABILITY.TELEPORT)
         {
             CharacterBehaviour character = null;

@@ -54,7 +54,7 @@ public class ObstacleSpawner : MonoBehaviour {
     private void DropObstacle()
     {
         Vector3 drop_position = new Vector3(Random.Range(-_drop_radius, _drop_radius), transform.position.y, Random.Range(-_drop_radius, _drop_radius));
-        GameObject obstacle = Instantiate(_obstacle[Random.Range(0, _obstacle.Length)], drop_position, Quaternion.identity);
+        GameObject obstacle = Instantiate(_obstacle[Random.Range(0, _obstacle.Length)], drop_position, Quaternion.Euler(0f, Random.Range(0f, 360f), 0f));
         _obstacles.Add(obstacle);
     }
 
