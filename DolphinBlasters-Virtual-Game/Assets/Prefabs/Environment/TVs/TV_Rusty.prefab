@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4959300809850036}
   - component: {fileID: 33470934871350334}
   - component: {fileID: 23117460312176388}
+  - component: {fileID: 95806479468530756}
   m_Layer: 0
   m_Name: TV_Rusty
   m_TagString: Untagged
@@ -82,3 +83,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1012111519754094}
   m_Mesh: {fileID: 4300000, guid: 236e796a57bcefe4f9ce89af6789d3c8, type: 3}
+--- !u!95 &95806479468530756
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1012111519754094}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 236e796a57bcefe4f9ce89af6789d3c8, type: 3}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1

@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4699969063873464}
   - component: {fileID: 33036283802379992}
   - component: {fileID: 23995502613051548}
+  - component: {fileID: 64937146497262146}
   m_Layer: 0
   m_Name: Connecting_pipe_1
   m_TagString: Untagged
@@ -36,7 +37,7 @@ Transform:
   m_GameObject: {fileID: 1052087751679394}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 26.56787, y: 0, z: 8.870277}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -81,4 +82,18 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1052087751679394}
+  m_Mesh: {fileID: 4300000, guid: 275d002f2e2723a4ea6e3ea8cc564666, type: 3}
+--- !u!64 &64937146497262146
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1052087751679394}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 275d002f2e2723a4ea6e3ea8cc564666, type: 3}
