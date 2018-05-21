@@ -13,7 +13,7 @@ public class PlayerBehaviour : CharacterBehaviour {
 
     private void Update()
     {
-        if (Input.GetButtonDown("Ability" + _player_number) && _power_level >= 100)
+        if (Input.GetButtonDown("Ability" + _player_number) && _power_level >= _needed_power_level)
         {
             UseAbility(_character_ability);
             _power_level = 0;
@@ -22,8 +22,6 @@ public class PlayerBehaviour : CharacterBehaviour {
 
     private new void FixedUpdate()
     {
-        Debug.Log(_is_frozen);
-        Debug.Log(_root_timer);
         if (GameManager.is_game_over == false)
         {
             base.FixedUpdate();
@@ -34,6 +32,10 @@ public class PlayerBehaviour : CharacterBehaviour {
             }
             if (_root_timer <= 0)
             {
+                if(_active_particle != null)
+                {
+                    Destroy(_active_particle);
+                }
                 _is_frozen = false;
                 _rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionY;
             if (_got_hit == false && _is_dashing == false)
