@@ -171,7 +171,7 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: cec3ef9572cb942459310e64f3109cc0, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 21732857754425630, guid: cec3ef9572cb942459310e64f3109cc0,
     type: 2}
   m_fontSharedMaterials: []
@@ -506,9 +506,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e98fd9597dde49b4bab5c19cd9a45eb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buttons: []
-  eventSystem: {fileID: 1555508254}
-  _goBackObject: {fileID: 1296941594}
 --- !u!1 &150839318
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,7 +630,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Music
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d023312404ad22548a94e40564ae56b3, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 21091897352132082, guid: d023312404ad22548a94e40564ae56b3,
     type: 2}
   m_fontSharedMaterials: []
@@ -1127,9 +1124,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e98fd9597dde49b4bab5c19cd9a45eb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buttons: []
-  eventSystem: {fileID: 1555508254}
-  _goBackObject: {fileID: 0}
 --- !u!114 &251073302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1141,9 +1135,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e98fd9597dde49b4bab5c19cd9a45eb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buttons: []
-  eventSystem: {fileID: 1555508254}
-  _goBackObject: {fileID: 1280722836}
 --- !u!1 &262749941
 GameObject:
   m_ObjectHideFlags: 0
@@ -1368,7 +1359,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 312315026}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e98fd9597dde49b4bab5c19cd9a45eb3, type: 3}
+  m_Script: {fileID: 11500000, guid: f5d2019a68b9de641ab4074fa02cce3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _buttons: []
@@ -1595,12 +1586,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 359752261}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e98fd9597dde49b4bab5c19cd9a45eb3, type: 3}
+  m_Script: {fileID: 11500000, guid: f5d2019a68b9de641ab4074fa02cce3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _buttons: []
   eventSystem: {fileID: 1555508254}
-  _goBackObject: {fileID: 1257574996}
+  _goBackObject: {fileID: 141901171}
 --- !u!1 &371152217
 GameObject:
   m_ObjectHideFlags: 0
@@ -1754,12 +1745,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 371152217}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e98fd9597dde49b4bab5c19cd9a45eb3, type: 3}
+  m_Script: {fileID: 11500000, guid: f5d2019a68b9de641ab4074fa02cce3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _buttons: []
-  eventSystem: {fileID: 1555508254}
-  _goBackObject: {fileID: 371152217}
+  eventSystem: {fileID: 0}
+  _goBackObject: {fileID: 0}
 --- !u!1 &377792346
 GameObject:
   m_ObjectHideFlags: 0
@@ -1882,9 +1873,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e98fd9597dde49b4bab5c19cd9a45eb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buttons: []
-  eventSystem: {fileID: 1555508254}
-  _goBackObject: {fileID: 1280722836}
 --- !u!1 &385891748
 GameObject:
   m_ObjectHideFlags: 0
@@ -2051,7 +2039,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Elivator
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: cec3ef9572cb942459310e64f3109cc0, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 21732857754425630, guid: cec3ef9572cb942459310e64f3109cc0,
     type: 2}
   m_fontSharedMaterials: []
@@ -2240,7 +2228,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Game Guide
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: cec3ef9572cb942459310e64f3109cc0, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 21732857754425630, guid: cec3ef9572cb942459310e64f3109cc0,
     type: 2}
   m_fontSharedMaterials: []
@@ -2628,7 +2616,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Controls
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: cec3ef9572cb942459310e64f3109cc0, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 21732857754425630, guid: cec3ef9572cb942459310e64f3109cc0,
     type: 2}
   m_fontSharedMaterials: []
@@ -2883,9 +2871,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e98fd9597dde49b4bab5c19cd9a45eb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buttons: []
-  eventSystem: {fileID: 1555508254}
-  _goBackObject: {fileID: 1296941594}
 --- !u!1 &480514931
 GameObject:
   m_ObjectHideFlags: 0
@@ -2942,7 +2927,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: SETTINGS
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d023312404ad22548a94e40564ae56b3, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 21091897352132082, guid: d023312404ad22548a94e40564ae56b3,
     type: 2}
   m_fontSharedMaterials: []
@@ -3167,7 +3152,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: cec3ef9572cb942459310e64f3109cc0, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 21732857754425630, guid: cec3ef9572cb942459310e64f3109cc0,
     type: 2}
   m_fontSharedMaterials: []
@@ -3354,9 +3339,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: rULES
+  m_text: RULES
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: cec3ef9572cb942459310e64f3109cc0, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 21732857754425630, guid: cec3ef9572cb942459310e64f3109cc0,
     type: 2}
   m_fontSharedMaterials: []
@@ -3431,11 +3416,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -3579,7 +3564,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Gee
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: cec3ef9572cb942459310e64f3109cc0, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 21732857754425630, guid: cec3ef9572cb942459310e64f3109cc0,
     type: 2}
   m_fontSharedMaterials: []
@@ -4080,7 +4065,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 600737951}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e98fd9597dde49b4bab5c19cd9a45eb3, type: 3}
+  m_Script: {fileID: 11500000, guid: f5d2019a68b9de641ab4074fa02cce3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _buttons: []
@@ -4148,7 +4133,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Game Guide
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: cec3ef9572cb942459310e64f3109cc0, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 21732857754425630, guid: cec3ef9572cb942459310e64f3109cc0,
     type: 2}
   m_fontSharedMaterials: []
@@ -4797,9 +4782,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e98fd9597dde49b4bab5c19cd9a45eb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buttons: []
-  eventSystem: {fileID: 1555508254}
-  _goBackObject: {fileID: 0}
 --- !u!1 &800649210
 GameObject:
   m_ObjectHideFlags: 0
@@ -4996,7 +4978,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Start Match
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: cec3ef9572cb942459310e64f3109cc0, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 21732857754425630, guid: cec3ef9572cb942459310e64f3109cc0,
     type: 2}
   m_fontSharedMaterials: []
@@ -5328,7 +5310,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Quit
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: cec3ef9572cb942459310e64f3109cc0, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 21732857754425630, guid: cec3ef9572cb942459310e64f3109cc0,
     type: 2}
   m_fontSharedMaterials: []
@@ -5782,12 +5764,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 909835230}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e98fd9597dde49b4bab5c19cd9a45eb3, type: 3}
+  m_Script: {fileID: 11500000, guid: f5d2019a68b9de641ab4074fa02cce3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _buttons: []
   eventSystem: {fileID: 1555508254}
-  _goBackObject: {fileID: 1257574996}
+  _goBackObject: {fileID: 2051998956}
 --- !u!222 &909835235
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5990,7 +5972,7 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d023312404ad22548a94e40564ae56b3, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 21091897352132082, guid: d023312404ad22548a94e40564ae56b3,
     type: 2}
   m_fontSharedMaterials: []
@@ -6213,7 +6195,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Character & Lore
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: cec3ef9572cb942459310e64f3109cc0, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 21732857754425630, guid: cec3ef9572cb942459310e64f3109cc0,
     type: 2}
   m_fontSharedMaterials: []
@@ -6536,9 +6518,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e98fd9597dde49b4bab5c19cd9a45eb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buttons: []
-  eventSystem: {fileID: 1555508254}
-  _goBackObject: {fileID: 1280722836}
 --- !u!1 &965505064
 GameObject:
   m_ObjectHideFlags: 0
@@ -6595,7 +6574,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: "E.V.i.L. Bot \n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: cec3ef9572cb942459310e64f3109cc0, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 21732857754425630, guid: cec3ef9572cb942459310e64f3109cc0,
     type: 2}
   m_fontSharedMaterials: []
@@ -6784,7 +6763,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Elivator
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: cec3ef9572cb942459310e64f3109cc0, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 21732857754425630, guid: cec3ef9572cb942459310e64f3109cc0,
     type: 2}
   m_fontSharedMaterials: []
@@ -7121,9 +7100,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e98fd9597dde49b4bab5c19cd9a45eb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buttons: []
-  eventSystem: {fileID: 1555508254}
-  _goBackObject: {fileID: 1280722836}
 --- !u!1 &1150970672
 GameObject:
   m_ObjectHideFlags: 0
@@ -7277,12 +7253,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1150970672}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e98fd9597dde49b4bab5c19cd9a45eb3, type: 3}
+  m_Script: {fileID: 11500000, guid: f5d2019a68b9de641ab4074fa02cce3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _buttons: []
   eventSystem: {fileID: 1555508254}
-  _goBackObject: {fileID: 1296941594}
+  _goBackObject: {fileID: 958655921}
 --- !u!1 &1153691813
 GameObject:
   m_ObjectHideFlags: 0
@@ -7450,12 +7426,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1153691813}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e98fd9597dde49b4bab5c19cd9a45eb3, type: 3}
+  m_Script: {fileID: 11500000, guid: f5d2019a68b9de641ab4074fa02cce3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _buttons: []
   eventSystem: {fileID: 1555508254}
-  _goBackObject: {fileID: 1280722836}
+  _goBackObject: {fileID: 2070864155}
 --- !u!1 &1181979526
 GameObject:
   m_ObjectHideFlags: 0
@@ -7608,9 +7584,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Press Start
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: cec3ef9572cb942459310e64f3109cc0, type: 2}
-  m_sharedMaterial: {fileID: 21732857754425630, guid: cec3ef9572cb942459310e64f3109cc0,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7931,9 +7906,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e98fd9597dde49b4bab5c19cd9a45eb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buttons: []
-  eventSystem: {fileID: 1555508254}
-  _goBackObject: {fileID: 1280722836}
 --- !u!1 &1257574996
 GameObject:
   m_ObjectHideFlags: 0
@@ -8090,9 +8062,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e98fd9597dde49b4bab5c19cd9a45eb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buttons: []
-  eventSystem: {fileID: 1555508254}
-  _goBackObject: {fileID: 1296941594}
 --- !u!1 &1280722836
 GameObject:
   m_ObjectHideFlags: 0
@@ -8102,7 +8071,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1280722837}
   - component: {fileID: 1280722840}
-  - component: {fileID: 1280722841}
   - component: {fileID: 1280722839}
   - component: {fileID: 1280722838}
   - component: {fileID: 1280722842}
@@ -8172,7 +8140,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1280722843}
+      - m_Target: {fileID: 1280722842}
         m_MethodName: LoadPLayerSelect
         m_Mode: 1
         m_Arguments:
@@ -8218,20 +8186,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1280722836}
---- !u!114 &1280722841
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1280722836}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e98fd9597dde49b4bab5c19cd9a45eb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _buttons: []
-  eventSystem: {fileID: 1555508254}
-  _goBackObject: {fileID: 0}
 --- !u!114 &1280722842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8240,12 +8194,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1280722836}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e98fd9597dde49b4bab5c19cd9a45eb3, type: 3}
+  m_Script: {fileID: 11500000, guid: 180456df522e4304ba1d41b76c053e2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buttons: []
-  eventSystem: {fileID: 1555508254}
-  _goBackObject: {fileID: 1280722836}
 --- !u!114 &1280722843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8254,9 +8205,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1280722836}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00267edb3191b504facfde1dc4e39fcc, type: 3}
+  m_Script: {fileID: 11500000, guid: f5d2019a68b9de641ab4074fa02cce3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _buttons: []
+  eventSystem: {fileID: 1555508254}
+  _goBackObject: {fileID: 1280722836}
 --- !u!1 &1293569377
 GameObject:
   m_ObjectHideFlags: 0
@@ -8313,7 +8267,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Options
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: cec3ef9572cb942459310e64f3109cc0, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 21732857754425630, guid: cec3ef9572cb942459310e64f3109cc0,
     type: 2}
   m_fontSharedMaterials: []
@@ -8565,12 +8519,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1296941594}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e98fd9597dde49b4bab5c19cd9a45eb3, type: 3}
+  m_Script: {fileID: 11500000, guid: f5d2019a68b9de641ab4074fa02cce3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _buttons: []
   eventSystem: {fileID: 1555508254}
-  _goBackObject: {fileID: 1280722836}
+  _goBackObject: {fileID: 251073296}
 --- !u!1 &1321165840
 GameObject:
   m_ObjectHideFlags: 0
@@ -8627,7 +8581,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: cec3ef9572cb942459310e64f3109cc0, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 21732857754425630, guid: cec3ef9572cb942459310e64f3109cc0,
     type: 2}
   m_fontSharedMaterials: []
@@ -8782,7 +8736,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Back
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: cec3ef9572cb942459310e64f3109cc0, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 21732857754425630, guid: cec3ef9572cb942459310e64f3109cc0,
     type: 2}
   m_fontSharedMaterials: []
@@ -9012,7 +8966,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Anouncer
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d023312404ad22548a94e40564ae56b3, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 21091897352132082, guid: d023312404ad22548a94e40564ae56b3,
     type: 2}
   m_fontSharedMaterials: []
@@ -9122,9 +9076,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e98fd9597dde49b4bab5c19cd9a45eb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buttons: []
-  eventSystem: {fileID: 1555508254}
-  _goBackObject: {fileID: 1280722836}
 --- !u!1 &1421789561
 GameObject:
   m_ObjectHideFlags: 0
@@ -9311,7 +9262,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Controls
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: cec3ef9572cb942459310e64f3109cc0, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 21732857754425630, guid: cec3ef9572cb942459310e64f3109cc0,
     type: 2}
   m_fontSharedMaterials: []
@@ -9599,7 +9550,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Characters
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: cec3ef9572cb942459310e64f3109cc0, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 21732857754425630, guid: cec3ef9572cb942459310e64f3109cc0,
     type: 2}
   m_fontSharedMaterials: []
@@ -9820,9 +9771,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e98fd9597dde49b4bab5c19cd9a45eb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buttons: []
-  eventSystem: {fileID: 1555508254}
-  _goBackObject: {fileID: 1280722836}
 --- !u!1 &1555508252
 GameObject:
   m_ObjectHideFlags: 0
@@ -10249,7 +10197,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1673095522}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e98fd9597dde49b4bab5c19cd9a45eb3, type: 3}
+  m_Script: {fileID: 11500000, guid: f5d2019a68b9de641ab4074fa02cce3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _buttons: []
@@ -10584,9 +10532,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e98fd9597dde49b4bab5c19cd9a45eb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buttons: []
-  eventSystem: {fileID: 1555508254}
-  _goBackObject: {fileID: 1280722836}
 --- !u!1 &1685900085
 GameObject:
   m_ObjectHideFlags: 0
@@ -10713,7 +10658,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: ZilBot 3000
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: cec3ef9572cb942459310e64f3109cc0, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 21732857754425630, guid: cec3ef9572cb942459310e64f3109cc0,
     type: 2}
   m_fontSharedMaterials: []
@@ -11005,7 +10950,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Rules
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: cec3ef9572cb942459310e64f3109cc0, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 21732857754425630, guid: cec3ef9572cb942459310e64f3109cc0,
     type: 2}
   m_fontSharedMaterials: []
@@ -11385,7 +11330,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 385891753}
+      - m_Target: {fileID: 1852359179}
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
@@ -11439,12 +11384,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1852359174}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e98fd9597dde49b4bab5c19cd9a45eb3, type: 3}
+  m_Script: {fileID: 11500000, guid: 1db01414dbcb7e0479a7ff9d888b2d87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buttons: []
-  eventSystem: {fileID: 1555508254}
-  _goBackObject: {fileID: 1280722836}
 --- !u!1 &1855263210
 GameObject:
   m_ObjectHideFlags: 0
@@ -11706,7 +11648,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: cec3ef9572cb942459310e64f3109cc0, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 21732857754425630, guid: cec3ef9572cb942459310e64f3109cc0,
     type: 2}
   m_fontSharedMaterials: []
@@ -11861,7 +11803,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d023312404ad22548a94e40564ae56b3, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 21091897352132082, guid: d023312404ad22548a94e40564ae56b3,
     type: 2}
   m_fontSharedMaterials: []
@@ -12149,7 +12091,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: cec3ef9572cb942459310e64f3109cc0, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 21732857754425630, guid: cec3ef9572cb942459310e64f3109cc0,
     type: 2}
   m_fontSharedMaterials: []
@@ -12304,7 +12246,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: ZilBot 3000
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: cec3ef9572cb942459310e64f3109cc0, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 21732857754425630, guid: cec3ef9572cb942459310e64f3109cc0,
     type: 2}
   m_fontSharedMaterials: []
@@ -12607,7 +12549,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: cec3ef9572cb942459310e64f3109cc0, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 21732857754425630, guid: cec3ef9572cb942459310e64f3109cc0,
     type: 2}
   m_fontSharedMaterials: []
@@ -13091,12 +13033,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2051998956}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e98fd9597dde49b4bab5c19cd9a45eb3, type: 3}
+  m_Script: {fileID: 11500000, guid: f5d2019a68b9de641ab4074fa02cce3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _buttons: []
   eventSystem: {fileID: 1555508254}
-  _goBackObject: {fileID: 1296941594}
+  _goBackObject: {fileID: 1241241982}
 --- !u!1 &2070864155
 GameObject:
   m_ObjectHideFlags: 0
@@ -13253,9 +13195,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e98fd9597dde49b4bab5c19cd9a45eb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buttons: []
-  eventSystem: {fileID: 1555508254}
-  _goBackObject: {fileID: 1280722836}
 --- !u!1 &2073403106
 GameObject:
   m_ObjectHideFlags: 0
@@ -13312,7 +13251,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: cec3ef9572cb942459310e64f3109cc0, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 21732857754425630, guid: cec3ef9572cb942459310e64f3109cc0,
     type: 2}
   m_fontSharedMaterials: []
@@ -13501,7 +13440,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: E.V.I.L. Bot
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: cec3ef9572cb942459310e64f3109cc0, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 21732857754425630, guid: cec3ef9572cb942459310e64f3109cc0,
     type: 2}
   m_fontSharedMaterials: []
@@ -14223,12 +14162,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2131806983}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e98fd9597dde49b4bab5c19cd9a45eb3, type: 3}
+  m_Script: {fileID: 11500000, guid: f5d2019a68b9de641ab4074fa02cce3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _buttons: []
   eventSystem: {fileID: 1555508254}
-  _goBackObject: {fileID: 1257574996}
+  _goBackObject: {fileID: 479343512}
 --- !u!1 &2132286408
 GameObject:
   m_ObjectHideFlags: 0
@@ -14421,7 +14360,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Lore
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: cec3ef9572cb942459310e64f3109cc0, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 21732857754425630, guid: cec3ef9572cb942459310e64f3109cc0,
     type: 2}
   m_fontSharedMaterials: []
