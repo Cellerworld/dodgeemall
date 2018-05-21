@@ -57,7 +57,6 @@ public class GameManager : MonoBehaviour {
         if(active_characters.Count <= 1)
         {
             is_game_over = true;
-            Debug.Log("The game is over");
         }
     }
 }

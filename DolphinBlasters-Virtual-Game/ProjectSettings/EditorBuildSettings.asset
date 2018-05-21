@@ -11,3 +11,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Arena_test.unity
     guid: d295d24d0ca7183468e2bd391ccba66c
+  - enabled: 1
+    path: Assets/Scenes/Main.unity
+    guid: 57d19fe98324f4b43bf4688ea8ec8af4
+  - enabled: 1
+    path: Assets/Scenes/Player_selection.unity
+    guid: 71db6b3a055624247a3e632af4b135c5
+  - enabled: 1
+    path: Assets/Scenes/Match_selection.unity
+    guid: 6387428ae047bc34f8901a5e932d8159
