@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/Win_Screen.unity
+=======
+- path: Assets/Scenes/Player_selection.unity
+>>>>>>> 804f87a181232e1479d37785b1f08ba46f75d853
   isLoaded: 1
   isActive: 1
