@@ -28,12 +28,10 @@ public class CharacterPlayerController : MonoBehaviour {
 		}
 		else if(_selected[1])
 		{
-
 			Selected2 ();
 		}
 		else if(_selected[2])
 		{
-
 			Selected3 ();
 		}
 		else if(_selected[3])
@@ -44,18 +42,7 @@ public class CharacterPlayerController : MonoBehaviour {
 		else 
 		{
 			Unselected ();
-
 		}
-
-
-
-
-
-
-
-
-
-			
 	}
 
 	private void Unselected()
@@ -70,6 +57,7 @@ public class CharacterPlayerController : MonoBehaviour {
 	{
 		if (Input.GetButtonDown ("Dodge" + _controllerNumber) ) {
 			if (!_character_is_taken [0]) {
+				Debug.Log ("happens");
 				transform.position = new Vector3 (_character_positions [0].position.x, transform.position.y, _character_positions [0].position.z);
 				_character_is_taken [0] = true;
 				_selected [0] = true;
