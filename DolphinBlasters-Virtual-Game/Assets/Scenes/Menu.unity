@@ -2615,6 +2615,10 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 999
       objectReference: {fileID: 0}
+    - target: {fileID: 1901104954003352, guid: a3938d2ad97fc9a48bfaf6f7b64fcd9e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a3938d2ad97fc9a48bfaf6f7b64fcd9e, type: 2}
   m_IsPrefabParent: 0
@@ -7666,11 +7670,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
