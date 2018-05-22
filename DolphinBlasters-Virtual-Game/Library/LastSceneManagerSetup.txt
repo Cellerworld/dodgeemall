@@ -1,12 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/Menu.unity
-=======
-<<<<<<< HEAD
-- path: Assets/Scenes/Character_Selection.unity
-=======
-- path: Assets/Scenes/ParticleTestScene.unity
->>>>>>> 8114de9d6b9a9343568f0243631936ae701b1cd0
->>>>>>> 7d0a440affc81a88752dfe045a3ea5319ef94956
+- path: Assets/Scenes/Player_selection.unity
   isLoaded: 1
   isActive: 1

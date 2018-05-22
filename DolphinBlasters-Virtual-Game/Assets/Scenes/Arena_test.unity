@@ -20238,6 +20238,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114805176898934006, guid: cb2ddbdf0a751d749a80e9becd1975b7,
+        type: 2}
+      propertyPath: _needed_power_level
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114805176898934006, guid: cb2ddbdf0a751d749a80e9becd1975b7,
+        type: 2}
+      propertyPath: _throw_power
+      value: 3000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb2ddbdf0a751d749a80e9becd1975b7, type: 2}
   m_IsPrefabParent: 0
@@ -32747,9 +32757,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4324885707892400, guid: 39ff76448bee7d34db204ba9b2c5a288, type: 2}
-      propertyPath: m_RootOrder
+    - target: {fileID: 1054108571107824, guid: 39ff76448bee7d34db204ba9b2c5a288, type: 2}
+      propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114731659372259568, guid: 39ff76448bee7d34db204ba9b2c5a288,
+        type: 2}
+      propertyPath: _throw_power
+      value: 3000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 39ff76448bee7d34db204ba9b2c5a288, type: 2}
@@ -38942,6 +38957,16 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114551308830089084, guid: 43632cd3dd0df0047ac55e6f704cd8f8,
+        type: 2}
+      propertyPath: _needed_power_level
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114551308830089084, guid: 43632cd3dd0df0047ac55e6f704cd8f8,
+        type: 2}
+      propertyPath: _throw_power
+      value: 3000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 43632cd3dd0df0047ac55e6f704cd8f8, type: 2}
@@ -48512,6 +48537,16 @@ Prefab:
     - target: {fileID: 1690747503586920, guid: 539861ac7ebc4974aaa719a1ed4dd4a7, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114738674704684090, guid: 539861ac7ebc4974aaa719a1ed4dd4a7,
+        type: 2}
+      propertyPath: _needed_power_level
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114738674704684090, guid: 539861ac7ebc4974aaa719a1ed4dd4a7,
+        type: 2}
+      propertyPath: _throw_power
+      value: 3000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 539861ac7ebc4974aaa719a1ed4dd4a7, type: 2}
