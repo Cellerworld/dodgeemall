@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
+- path: Assets/Scenes/Character_Selection.unity
+=======
 - path: Assets/Scenes/Arena_test.unity
+>>>>>>> fa0c7b27e874c20672fa1d40b3e91d6f7773b270
   isLoaded: 1
   isActive: 1
