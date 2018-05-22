@@ -94,10 +94,9 @@ public class ButtonBehavior : MonoBehaviour {
 	
 		yield return new WaitForSeconds (1.5f);
 
-		eventSystem.SetSelectedGameObject (_select);
+
 		_enable.SetActive (true);
-
-
+		eventSystem.SetSelectedGameObject (_select);
 		_disable.SetActive (false);
 
 

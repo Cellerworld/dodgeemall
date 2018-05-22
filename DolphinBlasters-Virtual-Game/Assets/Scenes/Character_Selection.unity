@@ -12049,6 +12049,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1370180609}
+  - component: {fileID: 1370180610}
   m_Layer: 0
   m_Name: CharacterSelectController
   m_TagString: Untagged
@@ -12069,6 +12070,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1370180610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1370180608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87fdf6d983d1d414288c162b407a11d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1374553192 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4888075148354828, guid: e2d3c35224c753c42a5e3737ebcd70ce,
