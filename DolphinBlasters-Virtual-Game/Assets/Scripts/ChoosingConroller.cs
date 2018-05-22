@@ -20,7 +20,7 @@ public class ChoosingConroller : MonoBehaviour {
 	}
 
 	//takes the next robot available in the direction
-	public int getRobot(int pNumber, int dir)
+	public Vector3 getRobot(int pNumber, int dir)
 	{
 		
 		for(int i = 0; i< 4; i++)
