@@ -26,18 +26,13 @@ public class Obstacle : MonoBehaviour {
         if(collision.gameObject.tag == "Ball")
         {
             GetComponent<AudioSource>().Play();
-            if (_is_grounded == false)
-            {
-                Rigidbody _rb = collision.gameObject.GetComponent<Rigidbody>();
-                _rb.velocity = -_rb.velocity;
-                StartCoroutine(DestroyObject());
-            }
-            Destroy(gameObject);
+			Rigidbody _rb = collision.gameObject.GetComponent<Rigidbody>();
+			_rb.velocity = -_rb.velocity;
+			StartCoroutine(DestroyObject());
             return;
         }
         if(collision.gameObject.tag == "Ground")
         {
-            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
             _is_grounded = true;
             gameObject.isStatic = true;
         }
