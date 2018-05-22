@@ -94,12 +94,15 @@ public class ButtonBehavior : MonoBehaviour {
 	
 		yield return new WaitForSeconds (1.5f);
 
-		_enable.SetActive (true);
 		eventSystem.SetSelectedGameObject (_select);
+		_enable.SetActive (true);
+
+
 		_disable.SetActive (false);
 
 
 		yield return new WaitForSecondsRealtime (2);
+
 		StopCoroutine ("goNext");
 
 		yield return new WaitForEndOfFrame();
