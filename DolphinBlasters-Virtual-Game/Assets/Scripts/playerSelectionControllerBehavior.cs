@@ -36,6 +36,22 @@ public class playerSelectionControllerBehavior : MonoBehaviour {
 	void Update () {
 		if (manager.GetIsRegistrated(_controllerNumber-1) && !_hasDecided) {
 			if (Input.GetButtonDown ("Submit"+_controllerNumber)) {
+				GameManager.registarted_player_controllernumber [_taken_player-1] = _controllerNumber;
+				switch (_controllerNumber)
+				{
+				case 1:
+					GameManager.player_colors [_taken_player] = Color.blue;
+					break;
+				case 2:
+					GameManager.player_colors [_taken_player] = Color.red;
+					break;
+				case 3:
+					GameManager.player_colors [_taken_player] = Color.green;
+					break;
+				case 4:
+					GameManager.player_colors [_taken_player] = Color.magenta;
+					break;
+				}
 				manager.tryStartCharacterSelect (true,_controllerNumber);
 				_hasDecided = true;
 			}

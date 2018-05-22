@@ -1,12 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/ParticleTestScene.unity
-=======
-<<<<<<< HEAD
-- path: Assets/Scenes/Arena_Camera_Animation.unity
-=======
-- path: Assets/Scenes/Character_Selection.unity
->>>>>>> d2fca73257f1c7a9378a7de98aadfa9852f46841
->>>>>>> 3f95c080dd4007515113de64af80859e611ccb6f
+- path: Assets/Scenes/Player_selection.unity
   isLoaded: 1
   isActive: 1

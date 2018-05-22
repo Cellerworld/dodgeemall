@@ -15,9 +15,23 @@ public class GameManager : MonoBehaviour {
     public static CharacterBehaviour last_ball_owner;
     public static List<CharacterBehaviour> active_characters;
     public static bool is_game_over;
+	//a field that declares the amount of players who registrated for the game
+	public static int amount_of_player;
+	//fields that function as informations for later scenes.
+	//the array index represents the following
+	//0 : player 1
+	//1 : player 2
+	//2 : player 3
+	//3 : Player 4
+	public static int[] registarted_player_controllernumber = new int[4]; // holds The Controllernumber that controls the player (anything >4 and < 1 is no player)
+	public static Color[] player_colors = new Color[4]; // the color the player
+	public static int[] used_character = new int[4]; // an int representing the character that the player chose
+													// 1 : Zielbot  / 2 : Gee   / 3 Evilbot   / 4 : Elivator
+	private GameObject _game_manager;
 
     private void Start()
     {
+		DontDestroyOnLoad (_game_manager);
         active_characters = new List<CharacterBehaviour>();
         CharacterBehaviour[] chars = FindObjectsOfType<CharacterBehaviour>();
         foreach(CharacterBehaviour character in chars)

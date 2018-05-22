@@ -34,19 +34,19 @@ public class playerSelectScreenController : MonoBehaviour {
 			_playerVisual [0].gameObject.SetActive (true);
 			_registrated[0] = true;
 		}
-		if (Input.GetButtonDown ("Start2") && !_registrated[0])
+		if (Input.GetButtonDown ("Start2") && !_registrated[1])
 		{
 			totalPlayerCount++;
 			_playerVisual [1].gameObject.SetActive (true);
 			_registrated[1] = true;
 		}
-		if (Input.GetButtonDown ("Start3") && !_registrated[0])
+		if (Input.GetButtonDown ("Start3") && !_registrated[2])
 		{
 			totalPlayerCount++;
 			_playerVisual [2].gameObject.SetActive (true);
 			_registrated[2] = true;
 		}
-		if (Input.GetButtonDown ("Start4") && !_registrated[0])
+		if (Input.GetButtonDown ("Start4") && !_registrated[3])
 		{
 			totalPlayerCount++;
 			_playerVisual [3].gameObject.SetActive (true);
@@ -62,16 +62,16 @@ public class playerSelectScreenController : MonoBehaviour {
 		{
 		case 0:
 			return screen [pScreen_number];
-			break;
+
 		case 1:
 			return screen [pScreen_number];
-			break;
+
 		case 2:
 			return screen [pScreen_number];
-			break;
+
 		default:
 			return screen [pScreen_number];
-			break;
+
 		}
 	}
 		
