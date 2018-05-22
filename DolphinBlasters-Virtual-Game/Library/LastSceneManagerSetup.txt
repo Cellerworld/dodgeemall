@@ -1,20 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
 - path: Assets/Scenes/Character_Selection.unity
-=======
-<<<<<<< HEAD
-- path: Assets/Scenes/ParticleTestScene.unity
-=======
-<<<<<<< HEAD
-- path: Assets/Scenes/Pouse_Menu.unity
-=======
-<<<<<<< HEAD
-- path: Assets/Scenes/Character_Selection.unity
-=======
-- path: Assets/Scenes/Arena_test.unity
->>>>>>> fa0c7b27e874c20672fa1d40b3e91d6f7773b270
->>>>>>> 74320595f24dc5e1abf22ca6e40439889f44ccad
->>>>>>> 75377d4c22cd7cff3fd7e489affb5c0dda5a9545
->>>>>>> e47b8b7e5a62d298f1f2d185abbfb5853a806f25
   isLoaded: 1
   isActive: 1
