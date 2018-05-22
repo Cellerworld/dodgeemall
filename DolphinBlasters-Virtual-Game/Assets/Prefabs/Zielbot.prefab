@@ -250,7 +250,7 @@ Transform:
   m_GameObject: {fileID: 1662812726123822}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.6, y: 1.6, z: 1.6}
   m_Children:
   - {fileID: 4735981833429286}
   - {fileID: 4463721550358588}
@@ -291,14 +291,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1054108571107824}
-  m_LocalRotation: {x: -0, y: 0.9926829, z: -0, w: 0.1207509}
+  m_LocalRotation: {x: 0, y: 0.38268343, z: 0, w: 0.92387956}
   m_LocalPosition: {x: -2.56, y: 0, z: 2.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4324885707892400}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!4 &4591612961260248
 Transform:
   m_ObjectHideFlags: 1
@@ -798,7 +798,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0ffaa8911eb61b248b3a64be78cd7403, type: 3}
   - {fileID: 8300000, guid: a0e768a7a4cd69e4ca916b92ab8db95b, type: 3}
   _ability_clip: {fileID: 8300000, guid: 0819d26d463a3474292c2ffa48364832, type: 3}
-  _throw_power: 2000
+  _throw_power: 3000
   _die_magnitude: 8
   _bounce_multiplier: 0.1
   _max_ball_velocity: 10
@@ -825,10 +825,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
+  m_Radius: 0.7940583
+  m_Height: 2.9794793
   m_Direction: 1
-  m_Center: {x: 0, y: 0.75, z: 0}
+  m_Center: {x: -0.010139941, y: 1.2397397, z: 1.06326066e-10}
 --- !u!136 &136457756650417686
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -838,10 +838,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.7
-  m_Height: 2.4
+  m_Radius: 1.092923
+  m_Height: 3.4804566
   m_Direction: 1
-  m_Center: {x: 0, y: 0.75, z: 0}
+  m_Center: {x: -0.027884956, y: 1.2902282, z: 3.1958697e-10}
 --- !u!198 &198425418931998842
 ParticleSystem:
   m_ObjectHideFlags: 1
