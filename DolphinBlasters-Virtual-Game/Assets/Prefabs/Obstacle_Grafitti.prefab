@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 65046861269993124}
   - component: {fileID: 114905416186501722}
   - component: {fileID: 54458017277731874}
+  - component: {fileID: 82617023407498788}
   m_Layer: 0
   m_Name: Obstacle_Grafitti
   m_TagString: Obstacle
@@ -89,7 +90,7 @@ Transform:
   m_GameObject: {fileID: 1271515775253742}
   m_LocalRotation: {x: -0, y: 0.9999948, z: -0, w: -0.0032328751}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 109.183334, y: 109.18346, z: 109.18352}
+  m_LocalScale: {x: 174.69328, y: 174.69328, z: 174.69328}
   m_Children: []
   m_Father: {fileID: 4587561986426612}
   m_RootOrder: 0
@@ -101,7 +102,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1328646132038786}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.359, y: 0.657, z: 1.483}
+  m_LocalPosition: {x: 3.8582954, y: 4.9990845, z: -4.734791}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4085086237198940}
@@ -175,8 +176,88 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.0932069, y: 1.134275, z: 0.5}
-  m_Center: {x: -0.004563093, y: 0.5635464, z: 0}
+  m_Size: {x: 1.7568011, y: 1.7978692, z: 1.8383808}
+  m_Center: {x: -0.008130789, y: 0.89534354, z: -0.15056801}
+--- !u!82 &82617023407498788
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1328646132038786}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: eb99bef83dfc9de499ce5e75e3a6605c, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &114126799497767078
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -217,7 +298,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 88acef1ac81127946a27da8ce9ae9438, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

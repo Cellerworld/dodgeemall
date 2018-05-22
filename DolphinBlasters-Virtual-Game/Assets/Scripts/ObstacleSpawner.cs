@@ -53,8 +53,8 @@ public class ObstacleSpawner : MonoBehaviour {
     //drops a random obstacle in a random position
     private void DropObstacle()
     {
-        Vector3 drop_position = new Vector3(Random.Range(-_drop_radius, _drop_radius), transform.position.y, Random.Range(-_drop_radius, _drop_radius));
-        GameObject obstacle = Instantiate(_obstacle[Random.Range(0, _obstacle.Length)], drop_position, Quaternion.identity);
+        Vector3 drop_position = new Vector3(transform.position.x + Random.Range(-_drop_radius, _drop_radius), transform.position.y, Random.Range(-_drop_radius, _drop_radius));
+        GameObject obstacle = Instantiate(_obstacle[Random.Range(0, _obstacle.Length)], drop_position, Quaternion.Euler(0f, Random.Range(0f, 360f), 0f));
         _obstacles.Add(obstacle);
     }
 
@@ -62,6 +62,6 @@ public class ObstacleSpawner : MonoBehaviour {
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.magenta;
-        Gizmos.DrawWireSphere(transform.position, _drop_radius);
+        Gizmos.DrawWireCube(transform.position, new Vector3(2 * _drop_radius, _drop_radius, 2 * _drop_radius));
     }
 }
