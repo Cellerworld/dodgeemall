@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour {
     public static CharacterBehaviour last_ball_owner;
     public static List<CharacterBehaviour> active_characters;
     public static bool is_game_over;
+    public static bool is_animation_over;
 	//a field that declares the amount of players who registrated for the game
 	public static int amount_of_player;
 	//fields that function as informations for later scenes.
@@ -29,11 +30,15 @@ public class GameManager : MonoBehaviour {
 													// 1 : Zielbot  / 2 : Gee   / 3 Evilbot   / 4 : Elivator
 	private GameObject _game_manager;
 
+    public static int _winner_id;
+    public static int _winner_controller_number;
+
     private void Start()
     {
 		DontDestroyOnLoad (_game_manager);
         
 		CharacterBehaviour[] chars = FindObjectsOfType<CharacterBehaviour>();
+        is_animation_over = false;
 //        foreach(CharacterBehaviour character in chars)
 //        {
 //            active_characters.Add(character);
@@ -68,9 +73,10 @@ public class GameManager : MonoBehaviour {
         {
             _restriction_timer -= Time.deltaTime;
         }
-        if(active_characters.Count <= 1)
+        if(active_characters.Count <= 1 && active_characters != null)
         {
             is_game_over = true;
+
         }
     }
 }

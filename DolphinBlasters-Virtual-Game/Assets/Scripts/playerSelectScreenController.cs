@@ -82,7 +82,7 @@ public class playerSelectScreenController : MonoBehaviour {
 
 	public void tryStartCharacterSelect(bool isReady, int pPlayerNumb)
 	{
-		_ready [pPlayerNumb] = isReady;
+		_ready [pPlayerNumb-1] = isReady;
 		if (totalPlayerCount > 1) {
 			sceneManager.LoadCharacterSelect (_ready, totalPlayerCount);
 		}

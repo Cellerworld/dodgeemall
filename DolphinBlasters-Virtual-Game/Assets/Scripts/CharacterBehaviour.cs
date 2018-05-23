@@ -1,9 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 //[RequireComponent(typeof(CharacterController))]
 public abstract class CharacterBehaviour : MonoBehaviour {
+
+    [SerializeField]
+    public int _id;
 
     [SerializeField]
     protected AudioClip[] _hit_sounds;
@@ -14,7 +18,19 @@ public abstract class CharacterBehaviour : MonoBehaviour {
     [SerializeField]
     protected AudioClip _charged_sound;
 
-	[SerializeField]
+    [SerializeField]
+    protected Image _circle;
+
+    [SerializeField]
+    protected Image _first_arrow;
+
+    [SerializeField]
+    protected Image _second_arrow;
+
+    [SerializeField]
+    protected Image _third_arrow;
+
+    [SerializeField]
 	protected float _throw_power;
 
     [SerializeField]
@@ -112,6 +128,8 @@ public abstract class CharacterBehaviour : MonoBehaviour {
     protected abstract void Fire();
     protected abstract void Dodge();
 
+    [SerializeField]
+    protected LoadSceneManager _sceen_manager;
 
     protected void Start()
     {
@@ -120,6 +138,13 @@ public abstract class CharacterBehaviour : MonoBehaviour {
         _dash_time = _start_dash_time;
 		_movement_speed = _desired_movement_speed;
         _is_alive = true;
+        for(int i = 0; i < 4; i++)
+        {
+            if(GameManager.registarted_player_controllernumber[i] == _player_number)
+            {
+                _circle.color = GameManager.player_colors[i];
+            }
+        }
     }
 
     public void SetRootTimer(float root_time)
@@ -139,43 +164,66 @@ public abstract class CharacterBehaviour : MonoBehaviour {
 
     protected void FixedUpdate()
     {
-        if (_is_alive == true)
+        if(GameManager.is_animation_over == true)
         {
-            if (_is_frozen)
+            if (_is_alive == true)
             {
-                _bounce_multiplier -= 0.0001f;
-            }
-            if (_ball != null)
-            {
-                if (_ball_time <= 0)
+                if (_is_frozen)
                 {
-                    _ball.GetComponent<Rigidbody>().velocity = Vector3.zero;
-                    Collider collider = _ball.GetComponent<SphereCollider>();
-                    collider.isTrigger = false;
-                    _ball = null;
-                    GameManager.SetRestrictedCharacrter(this);
-                    GameManager.current_ball_owner = null;
+                    _bounce_multiplier -= 0.0001f;
+                }
+                if (_ball != null)
+                {
+                    if (_ball_time <= 0)
+                    {
+                        _ball.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                        Collider collider = _ball.GetComponent<SphereCollider>();
+                        collider.isTrigger = false;
+                        _ball = null;
+                        GameManager.SetRestrictedCharacrter(this);
+                        GameManager.current_ball_owner = null;
+                        _movement_speed = _desired_movement_speed;
+                    }
+                    else
+                    {
+                        if (_ball_time <= _max_ball_time * 0.75f)
+                        {
+                            Debug.Log("SCHEI?E!");
+                            _first_arrow.enabled = true;
+                        }
+                        if (_ball_time <= _max_ball_time * 0.5f)
+                        {
+                            _second_arrow.enabled = true;
+                        }
+                        if (_ball_time <= _max_ball_time * 0.25f)
+                        {
+                            _third_arrow.enabled = true;
+                        }
+                        Debug.Log(_ball_time <= _max_ball_time * 0.75f);
+                        _movement_speed = _movement_speed * _slow_down_multiplier;
+                        _ball_time -= Time.deltaTime;
+                    }
+                }
+                if (_ball == null)
+                {
+                    _first_arrow.enabled = false;
+                    _second_arrow.enabled = false;
+                    _third_arrow.enabled = false;
+                }
+                if (_ability_duration_left <= 0 && _character_ability == ABILITY.SPEED && _ball == null)
+                {
                     _movement_speed = _desired_movement_speed;
+                }
+                if (_hit_timer <= 0)
+                {
+                    _got_hit = false;
                 }
                 else
                 {
-                    _movement_speed = _movement_speed * _slow_down_multiplier;
-                    _ball_time -= Time.deltaTime;
+                    _hit_timer -= Time.deltaTime;
                 }
+                _ability_duration_left -= Time.deltaTime;
             }
-            if (_ability_duration_left <= 0 && _character_ability == ABILITY.SPEED && _ball == null)
-            {
-                _movement_speed = _desired_movement_speed;
-            }
-            if (_hit_timer <= 0)
-            {
-                _got_hit = false;
-            }
-            else
-            {
-                _hit_timer -= Time.deltaTime;
-            }
-            _ability_duration_left -= Time.deltaTime;
         }
     }
 
@@ -332,10 +380,6 @@ public abstract class CharacterBehaviour : MonoBehaviour {
                 {
                     AddPowerLevel(10);
                     PickUpBall(ball, ball_rb);
-                }
-                if(_is_at_wall == true)
-                {
-                    Die();
                 }
             }
             else
