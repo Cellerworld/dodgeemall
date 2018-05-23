@@ -13,16 +13,19 @@ public class PlayerBehaviour : CharacterBehaviour {
 
     private void Update()
     {
-        if (Input.GetButtonDown("Ability" + _player_number) && _power_level >= _needed_power_level)
+        if (_is_alive == true)
         {
-            UseAbility(_character_ability);
-            _power_level = 0;
+            if (Input.GetButtonDown("Ability" + _player_number) && _power_level >= _needed_power_level)
+            {
+                UseAbility(_character_ability);
+                _power_level = 0;
+            }
         }
     }
 
     private new void FixedUpdate()
     {
-        if (GameManager.is_game_over == false)
+        if (GameManager.is_game_over == false && _is_alive == true)
         {
             base.FixedUpdate();
             if (_ball != null)
