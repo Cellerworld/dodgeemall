@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/Win_Screen.unity
-=======
 - path: Assets/Scenes/Menu.unity
->>>>>>> d7e972e29cc4f00b4fe4fac1a2e6d880e79e3c47
   isLoaded: 1
   isActive: 1
