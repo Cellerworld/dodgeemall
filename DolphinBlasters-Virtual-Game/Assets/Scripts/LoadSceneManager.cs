@@ -51,6 +51,17 @@ public class LoadSceneManager : MonoBehaviour {
 		}
 	}
 
+	public void LoadCharacterSelect()
+	{
+
+			//SceneManager.LoadScene ("Main");
+			
+			level_name = "Character_Selection";
+
+			StartCoroutine("loadScene");
+
+	}
+
 	IEnumerator loadScene()
 	{
 		animator [1].SetTrigger ("fadeOut");
