@@ -13,55 +13,61 @@ public class PlayerBehaviour : CharacterBehaviour {
 
     private void Update()
     {
-        if (_is_alive == true)
+        if (GameManager.is_animation_over == true)
         {
-            if (Input.GetButtonDown("Ability" + _player_number) && _power_level >= _needed_power_level)
+            if (_is_alive == true)
             {
-                UseAbility(_character_ability);
-                _power_level = 0;
+                if (Input.GetButtonDown("Ability" + _player_number) && _power_level >= _needed_power_level)
+                {
+                    UseAbility(_character_ability);
+                    _power_level = 0;
+                }
             }
         }
     }
 
     private new void FixedUpdate()
     {
-        if (GameManager.is_game_over == false && _is_alive == true)
+        if (GameManager.is_animation_over == true)
         {
-            base.FixedUpdate();
-            if (_ball != null)
+            if (GameManager.is_game_over == false && _is_alive == true)
             {
-                _ball_rb.velocity = Vector3.zero;
-                _ball.transform.position = _holder.position;
-            }
-            if (_root_timer <= 0)
-            {
-                if(_active_particle != null)
+                base.FixedUpdate();
+                if (_ball != null)
                 {
-                    Destroy(_active_particle);
+                    _ball_rb.velocity = Vector3.zero;
+                    _ball.transform.position = _holder.position;
                 }
-                _is_frozen = false;
-                _rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionY;
-            if (_got_hit == false && _is_dashing == false)
+                if (_root_timer <= 0)
                 {
-                    Move();
-                    Rotate();
-
-                    //throws the ball once the player presses the fire button and he has something that he can throw
-                    if (Input.GetButton("Fire" + _player_number) && _ball != null)
+                    if (_active_particle != null)
                     {
-                        Fire();
+                        Destroy(_active_particle);
                     }
+                    _is_frozen = false;
+                    _rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionY;
+                    if (_got_hit == false && _is_dashing == false)
+                    {
+                        Move();
+                        Rotate();
+
+                        //throws the ball once the player presses the fire button and he has something that he can throw
+                        if (Input.GetButton("Fire" + _player_number) && _ball != null)
+                        {
+                            Fire();
+                        }
+                    }
+                    Dodge();
                 }
-                Dodge();
+                _root_timer -= Time.deltaTime;
+                HandleAnimtaion();
             }
-            _root_timer -= Time.deltaTime;
-            HandleAnimtaion();
-        }
-        if (GameManager.is_game_over == true)
-        {
-            GameManager._winner_id = GameManager.active_characters[0]._id;
-            GameManager._winner_controller_number = GameManager.active_characters[0]._player_number;
-            _sceen_manager.LoadWinScreen();
+            if (GameManager.is_game_over == true)
+            {
+                GameManager._winner_id = GameManager.active_characters[0]._id;
+                GameManager._winner_controller_number = GameManager.active_characters[0]._player_number;
+                _sceen_manager.LoadWinScreen();
+            }
         }
     }
 
