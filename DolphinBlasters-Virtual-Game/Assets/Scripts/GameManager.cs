@@ -32,12 +32,12 @@ public class GameManager : MonoBehaviour {
     private void Start()
     {
 		DontDestroyOnLoad (_game_manager);
-        active_characters = new List<CharacterBehaviour>();
-        CharacterBehaviour[] chars = FindObjectsOfType<CharacterBehaviour>();
-        foreach(CharacterBehaviour character in chars)
-        {
-            active_characters.Add(character);
-        }
+        
+		CharacterBehaviour[] chars = FindObjectsOfType<CharacterBehaviour>();
+//        foreach(CharacterBehaviour character in chars)
+//        {
+//            active_characters.Add(character);
+//        }
     }
 
     public static void SetRestrictedCharacrter(CharacterBehaviour character)

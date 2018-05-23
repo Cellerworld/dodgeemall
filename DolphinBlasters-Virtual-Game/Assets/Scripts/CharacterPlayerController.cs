@@ -26,16 +26,16 @@ public class CharacterPlayerController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//_controllerNumber = ;
-		if (_controllerNumber != GameManager.registarted_player_controllernumber [0]) {
+		if (_controllerNumber == GameManager.registarted_player_controllernumber [0]) {
 			_player_number = 0;
 		}
-		else if (_controllerNumber != GameManager.registarted_player_controllernumber [1]) {
+		else if (_controllerNumber == GameManager.registarted_player_controllernumber [1]) {
 			_player_number = 1;
 		} 
-		else if (_controllerNumber != GameManager.registarted_player_controllernumber [2]) {
+		else if (_controllerNumber == GameManager.registarted_player_controllernumber [2]) {
 			_player_number = 2;
 		}
-		else if (_controllerNumber != GameManager.registarted_player_controllernumber [3]) {
+		else if (_controllerNumber == GameManager.registarted_player_controllernumber [3]) {
 			_player_number = 3;
 		}
 		else
@@ -48,7 +48,6 @@ public class CharacterPlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//Debug.Log(GameManager.amount_of_player);
-		Debug.Log (total_selects);
 		if (Input.GetKeyDown ("joystick button 9") && total_selects == GameManager.amount_of_player) 
 		{
 			GameManager.used_character [_player_number] = _character_number;
@@ -91,7 +90,7 @@ public class CharacterPlayerController : MonoBehaviour {
 	{
 		if (Input.GetButtonDown ("Dodge" + _controllerNumber)) {
 			if (!_character_is_taken [0]) {
-				_character_number = 0;
+				_character_number = 1;
 				total_selects++;
 				transform.position = new Vector3 (_character_positions [0].position.x, transform.position.y, _character_positions [0].position.z);
 				_character_is_taken [0] = true;
@@ -110,7 +109,7 @@ public class CharacterPlayerController : MonoBehaviour {
 	{
 		if (Input.GetKeyDown ("joystick "+ _controllerNumber + " button 1")) {
 			if(!_character_is_taken[1]){
-				_character_number = 1;
+				_character_number = 2;
 				total_selects++;
 				transform.position = new Vector3 (_character_positions[1].position.x , transform.position.y , _character_positions[1].position.z);
 				_character_is_taken[1] = true;
@@ -128,7 +127,7 @@ public class CharacterPlayerController : MonoBehaviour {
 	{
 		if (Input.GetButtonDown ("Submit"+ _controllerNumber)  ) {
 			if(!_character_is_taken[2]){
-				_character_number = 2;
+				_character_number = 3;
 				total_selects++;
 				transform.position = new Vector3 (_character_positions[2].position.x , transform.position.y , _character_positions[2].position.z);
 				_character_is_taken[2] = true;
@@ -146,7 +145,7 @@ public class CharacterPlayerController : MonoBehaviour {
 	{
 		if (Input.GetKeyDown ("joystick "+ _controllerNumber + " button 3")  ) {
 			if(!_character_is_taken[3]){
-				_character_number = 3;
+				_character_number = 4;
 				total_selects++;
 				transform.position = new Vector3 (_character_positions[3].position.x , transform.position.y , _character_positions[3].position.z);
 				_character_is_taken[3] = true;

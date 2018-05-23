@@ -82,8 +82,7 @@ public abstract class CharacterBehaviour : MonoBehaviour {
     [SerializeField]
     protected float _slow_down_multiplier;
 
-    [SerializeField]
-    protected int _player_number;
+	public int _player_number;
 
     [SerializeField]
     protected float _needed_power_level;
@@ -392,4 +391,9 @@ public abstract class CharacterBehaviour : MonoBehaviour {
             _movement_speed *= 1.5f;
         }
     }
+
+	public bool GetGotHIt()
+	{
+		return _got_hit;
+	}
 }
