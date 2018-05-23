@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/ParticleTestScene.unity
+=======
+- path: Assets/Scenes/Player_selection.unity
+>>>>>>> 30177ce3b962da7cf68033efef88e58c9c9a4ac2
   isLoaded: 1
   isActive: 1

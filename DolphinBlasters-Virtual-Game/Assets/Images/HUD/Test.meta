@@ -1,7 +1,11 @@
 fileFormatVersion: 2
 guid: f4810997fddd9584e89de72488288e69
 folderAsset: yes
+<<<<<<< HEAD:DolphinBlasters-Virtual-Game/Assets/Images/HUD/Test.meta
 timeCreated: 1527000795
+=======
+timeCreated: 1527013935
+>>>>>>> 30177ce3b962da7cf68033efef88e58c9c9a4ac2:DolphinBlasters-Virtual-Game/Assets/Animation/transition.meta
 licenseType: Free
 DefaultImporter:
   externalObjects: {}

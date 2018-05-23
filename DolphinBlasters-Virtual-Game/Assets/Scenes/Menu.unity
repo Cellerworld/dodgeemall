@@ -8514,6 +8514,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 180456df522e4304ba1d41b76c053e2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator:
+  - {fileID: 0}
+  - {fileID: 1817580000}
 --- !u!114 &1280722843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9930,7 +9933,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
