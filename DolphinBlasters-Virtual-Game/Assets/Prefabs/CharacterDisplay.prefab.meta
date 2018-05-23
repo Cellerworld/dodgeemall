@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+<<<<<<< HEAD:DolphinBlasters-Virtual-Game/Assets/Prefabs/CharacterDisplay.prefab.meta
+guid: d4cd09745bd250b459e483a4afab95e6
+timeCreated: 1527060875
+=======
+guid: b2226f9707f7d9245b0138f71f95e9a4
+folderAsset: yes
+timeCreated: 1527013935
+>>>>>>> 30177ce3b962da7cf68033efef88e58c9c9a4ac2:DolphinBlasters-Virtual-Game/Assets/Materials/face.meta
+licenseType: Free
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
