@@ -20,6 +20,12 @@ public class LoadSceneManager : MonoBehaviour {
 		
 	}
 
+    public void LoadWinScreen()
+    {
+        level_name = "Win_Screen";
+        StartCoroutine("loadScene");
+    }
+
 	public void LoadInGame()
 	{
 		level_name = "Arena_test";

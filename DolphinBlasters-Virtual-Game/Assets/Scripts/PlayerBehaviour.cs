@@ -57,6 +57,12 @@ public class PlayerBehaviour : CharacterBehaviour {
             _root_timer -= Time.deltaTime;
             HandleAnimtaion();
         }
+        if (GameManager.is_game_over == true)
+        {
+            GameManager._winner_id = GameManager.active_characters[0]._id;
+            GameManager._winner_controller_number = GameManager.active_characters[0]._player_number;
+            _sceen_manager.LoadWinScreen();
+        }
     }
 
     //moves the player according to the input given by the controller

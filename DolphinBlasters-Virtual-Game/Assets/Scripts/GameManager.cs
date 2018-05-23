@@ -29,6 +29,9 @@ public class GameManager : MonoBehaviour {
 													// 1 : Zielbot  / 2 : Gee   / 3 Evilbot   / 4 : Elivator
 	private GameObject _game_manager;
 
+    public static int _winner_id;
+    public static int _winner_controller_number;
+
     private void Start()
     {
 		DontDestroyOnLoad (_game_manager);
@@ -68,9 +71,10 @@ public class GameManager : MonoBehaviour {
         {
             _restriction_timer -= Time.deltaTime;
         }
-        if(active_characters.Count <= 1)
+        if(active_characters.Count <= 1 && active_characters != null)
         {
             is_game_over = true;
+
         }
     }
 }
