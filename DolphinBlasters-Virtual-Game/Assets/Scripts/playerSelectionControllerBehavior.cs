@@ -40,16 +40,16 @@ public class playerSelectionControllerBehavior : MonoBehaviour {
 				switch (_controllerNumber)
 				{
 				case 1:
-					GameManager.player_colors [_taken_player] = Color.blue;
+					GameManager.player_colors [_taken_player-1] = Color.blue;
 					break;
 				case 2:
-					GameManager.player_colors [_taken_player] = Color.red;
+					GameManager.player_colors [_taken_player-1] = Color.red;
 					break;
 				case 3:
-					GameManager.player_colors [_taken_player] = Color.green;
+					GameManager.player_colors [_taken_player-1] = Color.green;
 					break;
 				case 4:
-					GameManager.player_colors [_taken_player] = Color.magenta;
+					GameManager.player_colors [_taken_player-1] = Color.magenta;
 					break;
 				}
 				manager.tryStartCharacterSelect (true,_controllerNumber);
