@@ -11,6 +11,9 @@ public abstract class CharacterBehaviour : MonoBehaviour {
     [SerializeField]
     protected AudioClip _ability_clip;
 
+    [SerializeField]
+    protected AudioClip _charged_sound;
+
 	[SerializeField]
 	protected float _throw_power;
 
@@ -50,6 +53,7 @@ public abstract class CharacterBehaviour : MonoBehaviour {
 
     protected float _wall_hit_magnitude;
 
+    [SerializeField]
     protected bool _got_hit;
 
     protected bool _is_at_wall;
@@ -63,6 +67,7 @@ public abstract class CharacterBehaviour : MonoBehaviour {
     [SerializeField]
     protected float _desired_hit_timer;
 
+    [SerializeField]
     protected float _power_level;
 
     public enum ABILITY { TELEPORT, FREEZE, ROOT, SPEED}
@@ -98,6 +103,10 @@ public abstract class CharacterBehaviour : MonoBehaviour {
     protected Animator _anim;
 
     protected AudioSource _audio;
+    
+    protected bool _is_alive;
+
+    protected bool _is_charged;
 
     protected abstract void Move();
     protected abstract void Fire();
@@ -110,6 +119,7 @@ public abstract class CharacterBehaviour : MonoBehaviour {
         _anim = GetComponentInChildren<Animator>();
         _dash_time = _start_dash_time;
 		_movement_speed = _desired_movement_speed;
+        _is_alive = true;
     }
 
     public void SetRootTimer(float root_time)
@@ -129,41 +139,44 @@ public abstract class CharacterBehaviour : MonoBehaviour {
 
     protected void FixedUpdate()
     {
-        if (_is_frozen)
+        if (_is_alive == true)
         {
-            _bounce_multiplier -= 0.0001f;
-        }
-        if (_ball != null)
-        {
-            if (_ball_time <= 0)
+            if (_is_frozen)
             {
-                _ball.GetComponent<Rigidbody>().velocity = Vector3.zero;
-                Collider collider = _ball.GetComponent<SphereCollider>();
-                collider.isTrigger = false;
-                _ball = null;
-                GameManager.SetRestrictedCharacrter(this);
-                GameManager.current_ball_owner = null;
+                _bounce_multiplier -= 0.0001f;
+            }
+            if (_ball != null)
+            {
+                if (_ball_time <= 0)
+                {
+                    _ball.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                    Collider collider = _ball.GetComponent<SphereCollider>();
+                    collider.isTrigger = false;
+                    _ball = null;
+                    GameManager.SetRestrictedCharacrter(this);
+                    GameManager.current_ball_owner = null;
+                    _movement_speed = _desired_movement_speed;
+                }
+                else
+                {
+                    _movement_speed = _movement_speed * _slow_down_multiplier;
+                    _ball_time -= Time.deltaTime;
+                }
+            }
+            if (_ability_duration_left <= 0 && _character_ability == ABILITY.SPEED && _ball == null)
+            {
                 _movement_speed = _desired_movement_speed;
+            }
+            if (_hit_timer <= 0)
+            {
+                _got_hit = false;
             }
             else
             {
-                _movement_speed = _movement_speed * _slow_down_multiplier;
-                _ball_time -= Time.deltaTime;
+                _hit_timer -= Time.deltaTime;
             }
+            _ability_duration_left -= Time.deltaTime;
         }
-        if(_ability_duration_left <= 0 && _character_ability == ABILITY.SPEED && _ball == null)
-        {
-            _movement_speed = _desired_movement_speed;
-        }
-        if(_hit_timer <= 0)
-        {
-            _got_hit = false;
-        }
-        else
-        {
-            _hit_timer -= Time.deltaTime;
-        }
-        _ability_duration_left -= Time.deltaTime;
     }
 
     //TODO find the right value
@@ -233,7 +246,8 @@ public abstract class CharacterBehaviour : MonoBehaviour {
     protected void Die()
     {
         GameManager.RemovePlayer(this);
-        Destroy(this.gameObject);
+        _is_alive = false;
+        //Destroy(this.gameObject);
     }
 
     protected void OnTriggerExit(Collider other)
@@ -272,6 +286,17 @@ public abstract class CharacterBehaviour : MonoBehaviour {
     public void AddPowerLevel(int value)
     {
         _power_level += value;
+        if(_power_level >= _needed_power_level && _is_charged == false)
+        {
+            _audio.Stop();
+            _audio.clip = _charged_sound;
+            _audio.Play();
+            _is_charged = true;
+        }
+        if(_power_level < _needed_power_level)
+        {
+            _is_charged = false;
+        }
     }
 
     //recognizes collisions
@@ -332,6 +357,7 @@ public abstract class CharacterBehaviour : MonoBehaviour {
 
     protected void UseAbility(ABILITY ability)
     {
+        _is_charged = false;
         _audio.Stop();
         _audio.clip = _ability_clip;
         _audio.Play();
@@ -392,8 +418,18 @@ public abstract class CharacterBehaviour : MonoBehaviour {
         }
     }
 
-	public bool GetGotHIt()
+	public bool GetGotHit()
 	{
 		return _got_hit;
 	}
+
+    public float GetPowerLevel()
+    {
+        return _power_level;
+    }
+
+    public bool GetIsAlive()
+    {
+        return _is_alive;
+    }
 }

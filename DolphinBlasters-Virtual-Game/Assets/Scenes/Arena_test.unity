@@ -4218,8 +4218,9 @@ GameObject:
   - component: {fileID: 248554866}
   - component: {fileID: 248554868}
   - component: {fileID: 248554867}
+  - component: {fileID: 248554869}
   m_Layer: 5
-  m_Name: PlayerDisplay
+  m_Name: PlayerDisplayPink
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4284,6 +4285,36 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 248554865}
+--- !u!114 &248554869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 248554865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d258e8be82bad044ad1fc00b9fb7300, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _normal_slider_sprite: {fileID: 21300000, guid: 32e6a33f0b9c3984cae48e7f75d351b7,
+    type: 3}
+  _damaged_slider_sprite: {fileID: 21300000, guid: d9d00135bf0790648b465ceee1fe6ea9,
+    type: 3}
+  _death_slider_sprite: {fileID: 21300000, guid: 0b6b096861309c041a00a60de5aeafe9,
+    type: 3}
+  _normal_head_sprite: {fileID: 21300000, guid: 30bdae432c972cc4b9bed3dc10761922,
+    type: 3}
+  _damaged_head_sprite: {fileID: 21300000, guid: 99e3d1035d5fe3642a49131e169dfd0e,
+    type: 3}
+  _normal_power_charged: {fileID: 21300000, guid: ef5ad7deb76573f458af5e783cbecf31,
+    type: 3}
+  _damaged_power_charged: {fileID: 21300000, guid: 044e2374895396d46a24ea9edbf23989,
+    type: 3}
+  _death_head_sprite: {fileID: 21300000, guid: 7920b7e1437f2344c93ea6ec9e1649c4, type: 3}
+  _slider_background: {fileID: 1092944739}
+  _head: {fileID: 1022977662}
+  _character: {fileID: 1704674931}
+  _slider: {fileID: 739875703}
 --- !u!4 &250177027 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4656208866055196, guid: 8ee7b82c0d3e97c4a9a308f1d7df6c21,
@@ -6178,8 +6209,9 @@ GameObject:
   - component: {fileID: 372064989}
   - component: {fileID: 372064991}
   - component: {fileID: 372064990}
+  - component: {fileID: 372064992}
   m_Layer: 5
-  m_Name: PlayerDisplay
+  m_Name: PlayerDisplayBlue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6244,6 +6276,36 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 372064988}
+--- !u!114 &372064992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 372064988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d258e8be82bad044ad1fc00b9fb7300, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _normal_slider_sprite: {fileID: 21300000, guid: e3acad1bd0bfa954db71e583d9a2828e,
+    type: 3}
+  _damaged_slider_sprite: {fileID: 21300000, guid: 83666853926f7144f98c99a6439b4c3b,
+    type: 3}
+  _death_slider_sprite: {fileID: 21300000, guid: 0b6b096861309c041a00a60de5aeafe9,
+    type: 3}
+  _normal_head_sprite: {fileID: 21300000, guid: 7ffed4cf1f2adb54eb57d45193e5a716,
+    type: 3}
+  _damaged_head_sprite: {fileID: 21300000, guid: bf46b4f5eda1f9e419a147616abf6a7f,
+    type: 3}
+  _normal_power_charged: {fileID: 21300000, guid: 3bc278f23382cac42aca9f7990c9a43e,
+    type: 3}
+  _damaged_power_charged: {fileID: 21300000, guid: bfaef46fce21c784d94ee67d5ebd0a7a,
+    type: 3}
+  _death_head_sprite: {fileID: 21300000, guid: 7920b7e1437f2344c93ea6ec9e1649c4, type: 3}
+  _slider_background: {fileID: 1810388646}
+  _head: {fileID: 1212186310}
+  _character: {fileID: 2076750874}
+  _slider: {fileID: 140163770}
 --- !u!4 &380148002 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4888075148354828, guid: e2d3c35224c753c42a5e3737ebcd70ce,
@@ -10776,6 +10838,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114805176898934006, guid: cb2ddbdf0a751d749a80e9becd1975b7,
+        type: 2}
+      propertyPath: _charged_sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 12ab6f1eb2992f1428e37eaeaed2bc08, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb2ddbdf0a751d749a80e9becd1975b7, type: 2}
   m_IsPrefabParent: 0
@@ -10789,6 +10856,12 @@ GameObject:
   m_PrefabParentObject: {fileID: 1137882471251108, guid: cb2ddbdf0a751d749a80e9becd1975b7,
     type: 2}
   m_PrefabInternal: {fileID: 614196293}
+--- !u!114 &614196297 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114805176898934006, guid: cb2ddbdf0a751d749a80e9becd1975b7,
+    type: 2}
+  m_PrefabInternal: {fileID: 614196293}
+  m_Script: {fileID: 11500000, guid: 98c922d828a38d44991d354caa4baac9, type: 3}
 --- !u!4 &614212581 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4591711697981456, guid: e7a76093927b28c4f8701bbbcce39d7d,
@@ -12955,8 +13028,9 @@ GameObject:
   - component: {fileID: 777803611}
   - component: {fileID: 777803613}
   - component: {fileID: 777803612}
+  - component: {fileID: 777803614}
   m_Layer: 5
-  m_Name: PlayerDisplay
+  m_Name: PlayerDisplayGreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13021,6 +13095,36 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 777803610}
+--- !u!114 &777803614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 777803610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d258e8be82bad044ad1fc00b9fb7300, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _normal_slider_sprite: {fileID: 21300000, guid: 1ba2e91de6ca4f6479c48c09cb3bcc29,
+    type: 3}
+  _damaged_slider_sprite: {fileID: 21300000, guid: e772ae58c4d6c2e48b24f5b7bef0416d,
+    type: 3}
+  _death_slider_sprite: {fileID: 21300000, guid: 0b6b096861309c041a00a60de5aeafe9,
+    type: 3}
+  _normal_head_sprite: {fileID: 21300000, guid: 9e729efc6c4fee94b9b5932016cf88df,
+    type: 3}
+  _damaged_head_sprite: {fileID: 21300000, guid: af4cd6bbde8cffa418377fdba4cf0b87,
+    type: 3}
+  _normal_power_charged: {fileID: 21300000, guid: 8f69b6d387e262347ace3addd60ba7bc,
+    type: 3}
+  _damaged_power_charged: {fileID: 21300000, guid: 8b9eab671da7d734d8b5f0380ea42121,
+    type: 3}
+  _death_head_sprite: {fileID: 21300000, guid: 7920b7e1437f2344c93ea6ec9e1649c4, type: 3}
+  _slider_background: {fileID: 1853114362}
+  _head: {fileID: 579515198}
+  _character: {fileID: 1308400740}
+  _slider: {fileID: 1477066819}
 --- !u!1 &781154768
 GameObject:
   m_ObjectHideFlags: 0
@@ -13033,7 +13137,7 @@ GameObject:
   - component: {fileID: 781154770}
   - component: {fileID: 781154772}
   m_Layer: 5
-  m_Name: PlayerDisplay
+  m_Name: PlayerDisplayRed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13109,12 +13213,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d258e8be82bad044ad1fc00b9fb7300, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _normal_sprite: {fileID: 0}
-  _damaged_sprite: {fileID: 0}
-  _death_sprite: {fileID: 0}
-  _slider_background: {fileID: 0}
-  _head: {fileID: 0}
-  _character: {fileID: 0}
+  _normal_slider_sprite: {fileID: 21300000, guid: 1253edf7334feaa448d36b870b4e17af,
+    type: 3}
+  _damaged_slider_sprite: {fileID: 21300000, guid: 3c8b35522d0a2eb4d981aa670a12c958,
+    type: 3}
+  _death_slider_sprite: {fileID: 21300000, guid: 0b6b096861309c041a00a60de5aeafe9,
+    type: 3}
+  _normal_head_sprite: {fileID: 21300000, guid: 4be8019dcd0353c4e85511cff6436846,
+    type: 3}
+  _damaged_head_sprite: {fileID: 21300000, guid: 1ebb39af0f7b8e049aa099741e33e52c,
+    type: 3}
+  _normal_power_charged: {fileID: 21300000, guid: 335e127663d0e534f8315b95b128b79d,
+    type: 3}
+  _damaged_power_charged: {fileID: 21300000, guid: 135281f7b04629f42ae83f29f0dfb764,
+    type: 3}
+  _death_head_sprite: {fileID: 21300000, guid: 7920b7e1437f2344c93ea6ec9e1649c4, type: 3}
+  _slider_background: {fileID: 1170114904}
+  _head: {fileID: 305351654}
+  _character: {fileID: 614196297}
+  _slider: {fileID: 1960493508}
 --- !u!4 &782774409 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4259702915794102, guid: b33a2369d065a8742a50c4249d4d2936,
@@ -20813,6 +20930,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114731659372259568, guid: 39ff76448bee7d34db204ba9b2c5a288,
+        type: 2}
+      propertyPath: _charged_sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 12ab6f1eb2992f1428e37eaeaed2bc08, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 39ff76448bee7d34db204ba9b2c5a288, type: 2}
   m_IsPrefabParent: 0
@@ -20821,6 +20943,12 @@ GameObject:
   m_PrefabParentObject: {fileID: 1054108571107824, guid: 39ff76448bee7d34db204ba9b2c5a288,
     type: 2}
   m_PrefabInternal: {fileID: 1308400737}
+--- !u!114 &1308400740 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114731659372259568, guid: 39ff76448bee7d34db204ba9b2c5a288,
+    type: 2}
+  m_PrefabInternal: {fileID: 1308400737}
+  m_Script: {fileID: 11500000, guid: 98c922d828a38d44991d354caa4baac9, type: 3}
 --- !u!4 &1309288455 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4656208866055196, guid: 8ee7b82c0d3e97c4a9a308f1d7df6c21,
@@ -27708,6 +27836,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114551308830089084, guid: 43632cd3dd0df0047ac55e6f704cd8f8,
+        type: 2}
+      propertyPath: _charged_sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 12ab6f1eb2992f1428e37eaeaed2bc08, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 43632cd3dd0df0047ac55e6f704cd8f8, type: 2}
   m_IsPrefabParent: 0
@@ -27721,6 +27854,12 @@ GameObject:
   m_PrefabParentObject: {fileID: 1980098330147398, guid: 43632cd3dd0df0047ac55e6f704cd8f8,
     type: 2}
   m_PrefabInternal: {fileID: 1704674928}
+--- !u!114 &1704674931 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114551308830089084, guid: 43632cd3dd0df0047ac55e6f704cd8f8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1704674928}
+  m_Script: {fileID: 11500000, guid: 98c922d828a38d44991d354caa4baac9, type: 3}
 --- !u!1001 &1705382408
 Prefab:
   m_ObjectHideFlags: 0
@@ -34103,6 +34242,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114738674704684090, guid: 539861ac7ebc4974aaa719a1ed4dd4a7,
+        type: 2}
+      propertyPath: _charged_sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 12ab6f1eb2992f1428e37eaeaed2bc08, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 539861ac7ebc4974aaa719a1ed4dd4a7, type: 2}
   m_IsPrefabParent: 0
@@ -34116,6 +34260,12 @@ GameObject:
   m_PrefabParentObject: {fileID: 1690747503586920, guid: 539861ac7ebc4974aaa719a1ed4dd4a7,
     type: 2}
   m_PrefabInternal: {fileID: 2076750870}
+--- !u!114 &2076750874 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114738674704684090, guid: 539861ac7ebc4974aaa719a1ed4dd4a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 2076750870}
+  m_Script: {fileID: 11500000, guid: 98c922d828a38d44991d354caa4baac9, type: 3}
 --- !u!4 &2081035456 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4699969063873464, guid: 30486dae1adda024493fc16e48450368,
