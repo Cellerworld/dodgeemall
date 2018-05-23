@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour {
     public static CharacterBehaviour last_ball_owner;
     public static List<CharacterBehaviour> active_characters;
     public static bool is_game_over;
+    public static bool is_animation_over;
 	//a field that declares the amount of players who registrated for the game
 	public static int amount_of_player;
 	//fields that function as informations for later scenes.
@@ -37,6 +38,7 @@ public class GameManager : MonoBehaviour {
 		DontDestroyOnLoad (_game_manager);
         
 		CharacterBehaviour[] chars = FindObjectsOfType<CharacterBehaviour>();
+        is_animation_over = false;
 //        foreach(CharacterBehaviour character in chars)
 //        {
 //            active_characters.Add(character);
