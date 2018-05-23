@@ -10838,11 +10838,6 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114805176898934006, guid: cb2ddbdf0a751d749a80e9becd1975b7,
-        type: 2}
-      propertyPath: _charged_sound
-      value: 
-      objectReference: {fileID: 8300000, guid: 12ab6f1eb2992f1428e37eaeaed2bc08, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb2ddbdf0a751d749a80e9becd1975b7, type: 2}
   m_IsPrefabParent: 0
@@ -11503,7 +11498,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &648270653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20930,11 +20925,6 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114731659372259568, guid: 39ff76448bee7d34db204ba9b2c5a288,
-        type: 2}
-      propertyPath: _charged_sound
-      value: 
-      objectReference: {fileID: 8300000, guid: 12ab6f1eb2992f1428e37eaeaed2bc08, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 39ff76448bee7d34db204ba9b2c5a288, type: 2}
   m_IsPrefabParent: 0
@@ -27836,11 +27826,6 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114551308830089084, guid: 43632cd3dd0df0047ac55e6f704cd8f8,
-        type: 2}
-      propertyPath: _charged_sound
-      value: 
-      objectReference: {fileID: 8300000, guid: 12ab6f1eb2992f1428e37eaeaed2bc08, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 43632cd3dd0df0047ac55e6f704cd8f8, type: 2}
   m_IsPrefabParent: 0
@@ -34242,11 +34227,6 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114738674704684090, guid: 539861ac7ebc4974aaa719a1ed4dd4a7,
-        type: 2}
-      propertyPath: _charged_sound
-      value: 
-      objectReference: {fileID: 8300000, guid: 12ab6f1eb2992f1428e37eaeaed2bc08, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 539861ac7ebc4974aaa719a1ed4dd4a7, type: 2}
   m_IsPrefabParent: 0
@@ -34564,7 +34544,7 @@ GameObject:
   - component: {fileID: 2121918543}
   m_Layer: 0
   m_Name: ArenaBorder
-  m_TagString: Untagged
+  m_TagString: Border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

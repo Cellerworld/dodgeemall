@@ -35,6 +35,7 @@ public class Obstacle : MonoBehaviour {
         {
             _is_grounded = true;
             gameObject.isStatic = true;
+            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         }
         if(collision.gameObject.tag == "Character" && _is_grounded == false)
         {

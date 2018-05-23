@@ -1763,6 +1763,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3c1589a735e36574e89e994c3edbeeb7, type: 3}
   - {fileID: 8300000, guid: 0ffaa8911eb61b248b3a64be78cd7403, type: 3}
   _ability_clip: {fileID: 8300000, guid: f274b67833c9af047b2ac643b134a87d, type: 3}
+  _charged_sound: {fileID: 8300000, guid: 12ab6f1eb2992f1428e37eaeaed2bc08, type: 3}
   _throw_power: 3000
   _die_magnitude: 8
   _bounce_multiplier: 0.1
@@ -1772,7 +1773,9 @@ MonoBehaviour:
   _dash_speed: 800
   _start_dash_time: 0.4
   _max_ball_time: 3
+  _got_hit: 0
   _desired_hit_timer: 0.75
+  _power_level: 0
   _character_ability: 3
   _ability_duration: 1
   _slow_down_multiplier: 0.99

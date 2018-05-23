@@ -235,7 +235,7 @@ public abstract class CharacterBehaviour : MonoBehaviour {
         if (_is_at_wall == true)
         {
             Die();
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
             return;
         }
         CalculateBlowBack(obj, trans);
@@ -332,6 +332,10 @@ public abstract class CharacterBehaviour : MonoBehaviour {
                 {
                     AddPowerLevel(10);
                     PickUpBall(ball, ball_rb);
+                }
+                if(_is_at_wall == true)
+                {
+                    Die();
                 }
             }
             else
