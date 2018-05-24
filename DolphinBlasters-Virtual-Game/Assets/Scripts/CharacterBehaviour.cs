@@ -6,6 +6,9 @@ using UnityEngine.UI;
 //[RequireComponent(typeof(CharacterController))]
 public abstract class CharacterBehaviour : MonoBehaviour {
 
+	[SerializeField]
+	private InGameAudio gameAudio;
+
     [SerializeField]
     public int _id;
 
@@ -286,6 +289,9 @@ public abstract class CharacterBehaviour : MonoBehaviour {
             //Destroy(this.gameObject);
             return;
         }
+		if (Random.Range (0, 100) < 55) {
+			GetComponent<AudioSource> ().PlayOneShot (gameAudio.Encouraging [Random.Range (0, gameAudio.Encouraging.Length)]);
+		}
         CalculateBlowBack(obj, trans);
         _bounce_multiplier *= 1.1f;
     }
@@ -293,6 +299,7 @@ public abstract class CharacterBehaviour : MonoBehaviour {
     //Destroys the character
     protected void Die()
     {
+		GetComponent<AudioSource> ().PlayOneShot (gameAudio.Effeckts [Random.Range (0, gameAudio.Effeckts.Length)]);
         GameManager.RemovePlayer(this);
         _is_alive = false;
         //Destroy(this.gameObject);
@@ -329,6 +336,10 @@ public abstract class CharacterBehaviour : MonoBehaviour {
         GameManager.current_ball_owner = this;
         GameManager.last_ball_owner = this;
         _ball_rb = ball_rb;
+		if (Random.Range (0, 100) < 20)
+		{
+			GetComponent<AudioSource> ().PlayOneShot (gameAudio.Mocking[Random.Range(0,gameAudio.Mocking.Length)]);
+		}
     }
 
     public void AddPowerLevel(int value)
