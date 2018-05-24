@@ -31,6 +31,7 @@ public class InGameAudio : MonoBehaviour {
 		
 		yield return new WaitForSeconds (1f);
 		GetComponent<AudioSource> ().PlayOneShot (Beginning[Random.Range(0, Beginning.Length)]);
+		StopCoroutine ("startline");
 
 	}
 }

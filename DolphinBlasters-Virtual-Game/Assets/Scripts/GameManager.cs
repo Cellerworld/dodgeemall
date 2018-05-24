@@ -33,6 +33,8 @@ public class GameManager : MonoBehaviour {
     public static int _winner_id;
     public static int _winner_controller_number;
 
+	public static int buidlindex;
+
     private void Start()
     {
 		DontDestroyOnLoad (_game_manager);

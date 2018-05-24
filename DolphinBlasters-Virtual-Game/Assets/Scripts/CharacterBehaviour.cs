@@ -290,7 +290,9 @@ public abstract class CharacterBehaviour : MonoBehaviour {
             return;
         }
 		if (Random.Range (0, 100) < 55) {
-			GetComponent<AudioSource> ().PlayOneShot (gameAudio.Encouraging [Random.Range (0, gameAudio.Encouraging.Length)]);
+			int a = Random.Range (0, gameAudio.Encouraging.Length);
+			GetComponent<AudioSource> ().PlayOneShot (gameAudio.Encouraging [a]);
+			InGameAudio.cd = gameAudio.Mocking [a].length + 3;
 		}
         CalculateBlowBack(obj, trans);
         _bounce_multiplier *= 1.1f;
@@ -336,9 +338,11 @@ public abstract class CharacterBehaviour : MonoBehaviour {
         GameManager.current_ball_owner = this;
         GameManager.last_ball_owner = this;
         _ball_rb = ball_rb;
-		if (Random.Range (0, 100) < 20)
+		if (Random.Range (0, 100) < 20 && InGameAudio.cd <= 0)
 		{
-			GetComponent<AudioSource> ().PlayOneShot (gameAudio.Mocking[Random.Range(0,gameAudio.Mocking.Length)]);
+			int a = Random.Range (0, gameAudio.Mocking.Length);
+			GetComponent<AudioSource> ().PlayOneShot (gameAudio.Mocking[a]);
+			InGameAudio.cd = gameAudio.Mocking [a].length + 3;
 		}
     }
 
